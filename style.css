@@ -163,3 +163,16 @@ footer .btn{color:var(--dark)}
 .brand .brandname{font-family:"Luckiest Guy","Arial Black",Impact,system-ui,sans-serif;font-weight:400;font-size:1.9rem;letter-spacing:.03em;line-height:1;vertical-align:middle;color:#1b4332;text-shadow:2px 2px 0 #ffb703}
 .photohero .herotag{font-family:"Luckiest Guy","Arial Black",Impact,system-ui,sans-serif;font-size:clamp(1.4rem,3.6vw,2.2rem);letter-spacing:.03em;color:#ffb703;margin:0 0 .5rem;text-shadow:0 2px 0 #1b4332,0 4px 10px rgba(0,0,0,.6)}
 @media(max-width:600px){.brand .brandname{font-size:1.25rem}.brand{white-space:nowrap;padding:.3rem .7rem}.photohero .herotag{font-size:1.35rem}}
+
+/* ---- Winter safety box ---- */
+.card.winter-safety{background:#eaf4fb;border-color:#16405e}
+.card.winter-safety ul{margin:.4rem 0;padding-left:1.2rem}
+.card.winter-safety li{margin:.25rem 0}
+.card.snowshoe{grid-column:1/-1;background:#f3f8fc;border-color:#16405e}
+.card.snowshoe h4{margin:.8rem 0 .2rem;color:#16405e}
+.card.snowshoe .ssnote{margin:.1rem 0 .4rem;font-size:.95rem}
+.card.snowshoe .sslist{margin:0;padding-left:1.2rem}
+.card.snowshoe .sslist li{margin:.45rem 0}
+.card.snowshoe .sslinks{display:inline-flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-left:.3rem}
+.card.snowshoe .sslinks .mapbtn{margin:0;padding:.15rem .6rem;font-size:.85rem}
+.card.snowshoe .ssrent{margin:.8rem 0 0}
