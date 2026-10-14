@@ -137,3 +137,18 @@ footer .btn{color:var(--dark)}
 .hdone{background:#fff3c4;border:4px solid #f4a261;border-radius:20px;padding:1rem;text-align:center;margin:1rem 0;color:#1a1a1a}
 #confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:99}#confetti i{position:absolute;top:-12px;width:10px;height:14px;animation:fall linear forwards}@keyframes fall{to{transform:translateY(105vh) rotate(720deg)}}
 @media(prefers-reduced-motion:reduce){#confetti{display:none}.pop{animation:none}}
+.spots .card{display:flex;flex-direction:column}.spot .area{margin:.2rem 0;font-weight:700;color:#16405e}
+.regbox{display:grid;grid-template-columns:auto 1fr;gap:.25rem .7rem;background:#eef6fb;border:2px solid #3b8fc2;border-radius:10px;padding:.7rem .8rem;margin:.6rem 0;font-size:.95rem}
+.regbox dt{font-weight:700}.regbox dd{margin:0}
+.regbtn{font-weight:700}.spot .mapbtn{align-self:flex-start;margin-top:auto}
+@media(max-width:600px){.regbox{grid-template-columns:1fr;gap:0}.regbox dd{margin-bottom:.35rem}}
+/* hunt v2: unmistakable found state */
+.phunt .hcard{background:#fff!important;color:#1a1a1a!important;border:3px solid #2e5d3a!important}
+.phunt .hcard .hc{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;min-width:44px;height:44px;border-radius:50%;border:3px dashed #2e5d3a;color:transparent!important;font-size:1.6rem;font-weight:900;background:#fff}
+.phunt .hcard[aria-pressed=true]{background:#2e7d32!important;color:#fff!important;border-color:#ffb703!important;box-shadow:0 0 0 4px #ffb703}
+.phunt .hcard[aria-pressed=true] .hc{background:#ffb703!important;border:3px solid #fff;color:#1a1a1a!important}
+.phunt .hcard[aria-pressed=true] .ht::after{content:"  FOUND!";font-weight:900;color:#ffe082;text-decoration:none;display:inline-block;margin-left:.4rem}
+.phunt .hcard.pop{animation:hpop .35s ease}
+@keyframes hpop{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
+.htoast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:.7rem 1.2rem;border-radius:999px;font-weight:700;z-index:99;opacity:0;transition:opacity .2s;pointer-events:none}
+.htoast.show{opacity:1}
