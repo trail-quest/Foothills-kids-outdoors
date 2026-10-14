@@ -29,18 +29,21 @@ DESC = {
  "scavenger-hunt.html":"A free printable nature scavenger hunt card for kids of all ages exploring the Foothills and Kananaskis, from Calgary-area towns to Longview.",
  "leaders.html":"Planning tips, printables and a safety checklist for family groups, teachers and club leaders taking kids outdoors around Okotoks, High River and Kananaskis.",
  "sponsors.html":"Sponsor Foothills Kids Outdoors, a free outdoor guide for families in Longview, Turner Valley, Black Diamond, High River and Okotoks. Contact us for rates.",
+ "hunt-01-fall-colours.html":"Fall Colours Quest: a printable fall nature scavenger hunt for kids in the Alberta Foothills, from Foothills Kids Outdoors.",
+ "volunteer.html":"Family volunteering in the Alberta Foothills: kid-friendly cleanups, tree planting, bird counts and trail care around Okotoks, High River and Kananaskis.",
  "about.html":"About Foothills Kids Outdoors, a family guide to outdoor adventures for kids of all ages around Longview and the Foothills, south of Calgary.",
 }
 SIGNUP = "https://foothills-kids-outdoors-ovmgv1.subscribepage.io/"
 OGIMG = BASE+"images/act/peter-lougheed.jpg"; OGALT = "Snowy peaks above a lake in Peter Lougheed Provincial Park, Kananaskis"
 COMPACT = f'<section class="signup compact"><h2 class="signup-title">🗺️ Get a new scavenger hunt every week</h2><p>One email a week, unsubscribe anytime.</p><a class="btn" href="{SIGNUP}">Sign me up</a></section>'
+DONEBOX = f'<section class="signup compact donehunt"><h2 class="signup-title">Done the hunt? Want a new one next week?</h2><p>We send a fresh themed scavenger hunt every week. One email a week, unsubscribe anytime.</p><a class="btn" href="{SIGNUP}">Sign me up</a></section>'
 import urllib.parse as _u
 def share(url,title):
     q=_u.quote(url,safe=""); t=_u.quote(title,safe="")
     return (f'<p class="share"><span class="sharelbl">Share:</span> <a href="https://www.facebook.com/sharer/sharer.php?u={q}" target="_blank" rel="noopener">Facebook</a> '
             f'<a href="mailto:?subject={t}&amp;body={q}">Email</a> <button type="button" class="sharecopy" data-url="{url}" data-title="{html.escape(title)}">Copy link</button></p>')
 SHJS = """<script>document.addEventListener('click',async e=>{const b=e.target.closest('.sharecopy');if(!b)return;const url=b.dataset.url,title=b.dataset.title;if(navigator.share){try{await navigator.share({title,url})}catch(err){}return}try{await navigator.clipboard.writeText(url);b.textContent='Copied!'}catch(err){prompt('Copy this link:',url);return}setTimeout(()=>b.textContent='Copy link',1800)})</script>"""
-NAV = [("index.html","Home"),("directory.html","Directory"),("fishing.html","Fishing"),("calendar.html","Calendar"),("scavenger-hunt.html","Scavenger Hunt"),("leaders.html","Groups &amp; Leaders"),("sponsors.html","Sponsors"),("about.html","About")]
+NAV = [("index.html","Home"),("directory.html","Directory"),("fishing.html","Fishing"),("calendar.html","Calendar"),("scavenger-hunt.html","Scavenger Hunt"),("volunteer.html","Volunteer"),("leaders.html","Groups &amp; Leaders"),("sponsors.html","Sponsors"),("about.html","About")]
 E=html.escape
 PAGES=[]
 def page(fn,title,body,script="",full=None):
@@ -53,10 +56,10 @@ def page(fn,title,body,script="",full=None):
 <meta property="og:type" content="website"><meta property="og:site_name" content="{BRAND}"><meta property="og:title" content="{E(full)}"><meta property="og:description" content="{d}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{OGIMG}"><meta property="og:image:width" content="800"><meta property="og:image:height" content="450"><meta property="og:image:alt" content="{OGALT}">
 <meta name="twitter:site" content="@FoothillsKidsAB"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(full)}"><meta name="twitter:description" content="{d}"><meta name="twitter:image" content="{OGIMG}"><meta name="twitter:image:alt" content="{OGALT}">
-<link rel="icon" type="image/png" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&amp;display=swap"><link rel="stylesheet" href="style.css?v=7"></head><body>
+<link rel="icon" type="image/png" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&amp;display=swap"><link rel="stylesheet" href="style.css?v=8"></head><body>
 <header class="hero-head">{SCENE}<div class="head-inner"><a class="brand" href="index.html"><img class="logo" src="images/logo.png" alt="Foothills Kids Outdoors" width="40" height="40"> <span class="brandname">{BRAND}</span></a><nav>{nav}</nav></div></header>
 <main>{body}</main>
-<footer>{GRASS}<div class="foot-inner"><p><strong>{BRAND}</strong> &middot; Kids' outdoor adventures around Longview &amp; the Foothills, Alberta</p><p>Follow us on <a href="https://www.facebook.com/FoothillsKidsOutdoors" rel="noopener">Facebook</a> and <a href="https://x.com/FoothillsKidsAB" rel="noopener">X</a></p><p><a class="btn btn-small" href="{SIGNUP}">✉️ Weekly newsletter</a></p><p>Directory details come from organizers' public pages and can change. Check with the organizer and official sources before heading out.</p></div></footer>{script}{SHJS if "sharecopy" in body else ""}</body></html>''')
+<footer>{GRASS}<div class="foot-inner"><p><strong>{BRAND}</strong> &middot; Kids' outdoor adventures around Longview &amp; the Foothills, Alberta</p><p>Follow us on <a href="https://www.facebook.com/profile.php?id=61595326322930" rel="noopener">Facebook</a> and <a href="https://x.com/FoothillsKidsAB" rel="noopener">X</a></p><p><a class="btn btn-small" href="{SIGNUP}">✉️ Weekly newsletter</a></p><p>Directory details come from organizers' public pages and can change. Check with the organizer and official sources before heading out.</p></div></footer>{script}{SHJS if "sharecopy" in body else ""}<script data-goatcounter="https://foothillskids.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>''')
 import json as _j
 _PH={x["photo"]:x for x in _j.load(open("foothills-activities.json")) if x.get("photo")}
 def _cr(p): x=_PH[p]; return f'<a href="{x["photo_credit_url"]}" rel="noopener">{x["photo_credit"]}</a>'
@@ -100,6 +103,7 @@ REAL=json.load(open("foothills-activities.json"))
 _c=[realcard(x) for x in REAL]
 NEWS=f'<section class="signup gridsignup"><h2 class="signup-title">🗺️ Get a new scavenger hunt every week</h2><p>A fresh themed hunt each week, only in the newsletter.</p><a class="btn" href="{SIGNUP}">Sign me up</a></section>'
 WSAFE='<div class="card winter-safety" id="winter-safety" data-cat="winter"><span class="badge">Winter Fun</span><h3>❄️ Winter safety</h3><ul><li><strong>Ice:</strong> at least 15 cm for one person and 20 cm for a group. Never go on storm ponds or moving water.</li><li><strong>Dress in layers</strong> and pack extra mitts and socks.</li><li><strong>Micro-spikes</strong> or ice cleats for icy trails.</li><li><strong>Check before you go:</strong> <a href="https://avalanche.ca/" rel="noopener">avalanche ratings</a> and road conditions on <a href="https://511.alberta.ca/" rel="noopener">511 Alberta</a>.</li><li><strong>Wildlife:</strong> stay well back and never feed animals.</li></ul><p class="org"><a href="https://parks.canada.ca/pn-np/ab/banff/activ/patinage-skating" rel="noopener">Parks Canada ice guidance</a></p></div>'
+BRING='<aside class="card bring" id="what-to-bring"><h2>🎒 What to bring</h2><ul class="bringlist"><li>🧥 <strong>Layers:</strong> foothills weather flips fast, so pack a warm layer and a rain shell.</li><li>💧 <strong>Water</strong> for everyone, plus 🍎 <strong>snacks</strong> to keep little legs going.</li><li>☀️ <strong>Sun or snow gear by season:</strong> sunscreen, hats and bug spray in summer; a toque, mitts and spare socks in winter.</li><li>🩹 <strong>A small first-aid kit</strong> and any meds your kids need.</li><li>🐻 <strong>Bear spray</strong> on Kananaskis and backcountry trails (and know how to use it).</li><li>🗑️ <strong>A bag to pack out garbage</strong>, and a charged phone.</li></ul></aside>'
 _wi=next(i for i,x in enumerate(REAL) if x["category"]=="Winter Fun")
 AP="https://www.albertaparks.ca/parks/kananaskis/kananaskis-country/advisories-public-safety/trail-reports/"
 def _ss(n,dist,note,src,q): return f'<li><strong>{n}</strong> ({dist}). {note} <span class="sslinks"><a href="{src}" rel="noopener">Trail report</a> <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query={urllib.parse.quote_plus(q)}" target="_blank" rel="noopener">📍 Open in Maps</a></span></li>'
@@ -120,7 +124,7 @@ cards="".join(_c[:9])+NEWS+"".join(_c[9:])
 btns="".join(f'<button data-f="{k}"{" class=on" if k=="all" else ""}>{v}</button>' for k,v in [("all","All"),("trails","Trails &amp; Hikes"),("fishing","Fishing"),("horses","Horses &amp; Ranch Life"),("archery","Archery"),("wildlife","Wildlife &amp; Nature"),("winter","Winter Fun")])
 page("directory.html","Directory",full="Kids' Outdoor Activities in Okotoks, High River, Bragg Creek & Kananaskis | Foothills Kids Outdoors",body=f'''<h1>{ICONS['leaf']} Adventure Directory</h1><p>Real places and programs around the Foothills, from public pages by the organizers named on each card.</p><p class="note"><strong>Details change, check with the organizer</strong> (dates, hours, fees and closures) before you go.</p>
 <form class="search" role="search" onsubmit="return false"><label for="q">🔎 What do you want to do?</label><div class="searchrow"><input type="search" id="q" name="q" placeholder="Try skating, fishing or Okotoks." autocomplete="off" aria-describedby="qcount"><button type="button" id="qclear" class="qclear" aria-label="Clear search" hidden>&times;</button></div><p id="qcount" class="qcount" aria-live="polite"></p></form>
-<div class="filters" role="group" aria-label="Filter listings">{btns}</div><p id="hwban" class="hwban" hidden>🎃 Looking for Halloween events? <a href="calendar.html#halloween">See the October calendar</a></p><p id="nomatch" class="nomatch" hidden>No matches yet. Try &#39;winter&#39; or <button type="button" id="qreset" class="linkbtn">browse all</button>.</p><div class="grid" id="list">{cards}</div>''',
+<div class="filters" role="group" aria-label="Filter listings">{btns}</div><p id="hwban" class="hwban" hidden>🎃 Looking for Halloween events? <a href="calendar.html#halloween">See the October calendar</a></p><p id="nomatch" class="nomatch" hidden>No matches yet. Try &#39;winter&#39; or <button type="button" id="qreset" class="linkbtn">browse all</button>.</p>{BRING}<div class="grid" id="list">{cards}</div>''',
 script='''<script>(()=>{const qi=document.getElementById('q'),qc=document.getElementById('qclear'),nm=document.getElementById('nomatch'),cnt=document.getElementById('qcount'),cards=[...document.querySelectorAll('#list .card')],gs=document.querySelector('#list .gridsignup');let f='all';const norm=t=>t.toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'');cards.forEach(c=>{const k=c.cloneNode(true);k.querySelectorAll('.share').forEach(x=>x.remove());c.dataset.txt=norm(k.textContent.replace(/\\s+/g,' '))});
 const SYN={sled:['toboggan','sled'],sledding:['toboggan','sled'],tobogganing:['toboggan'],skate:['skat'],skates:['skat'],horse:['horse','ranch','rodeo'],horses:['horse','ranch','rodeo'],fish:['fish'],toddler:['toddler','stroller','easy'],toddlers:['toddler','stroller','easy'],stroller:['toddler','stroller','easy'],strollers:['toddler','stroller','easy']},HW=/hallowe+n|pumpkin|trick.?or.?treat|costume|spooky/,hb=document.getElementById('hwban');
 function apply(){const raw=norm(qi.value.trim()),w=raw.split(/\\s+/).filter(Boolean);hb.hidden=!HW.test(raw);let n=0;cards.forEach(c=>{const ok=(f==='all'||c.dataset.cat===f)&&w.every(x=>(SYN[x]||[x]).some(y=>c.dataset.txt.includes(y)));c.hidden=!ok;if(ok)n++});qc.hidden=!qi.value;nm.hidden=n>0;if(gs)gs.hidden=w.length>0;cnt.textContent=w.length?(n?n+(n===1?' match':' matches'):'No matches'):'';const u=new URL(location);if(w.length)u.searchParams.set('q',qi.value.trim());else u.searchParams.delete('q');history.replaceState(null,'',u)}
@@ -138,7 +142,7 @@ page("fishing.html","Fishing",'''<div class="water"><svg class="bobber" viewBox=
 <div class="card"><h2>🚫 Bait Ban</h2><p>No bait on any part of the Highwood. Use <strong>unscented</strong> lures or flies only (no scented lures or PowerBait).</p></div>
 <div class="card"><h2>🐟 Trout</h2><p><strong>Most trout must be released.</strong> In the upper headwaters you may keep up to 2 brook trout. Mountain whitefish can be kept on some stretches at some times, so check the limits.</p></div>
 <div class="card"><h2>🧒 Licence</h2><p>Kids <strong>under 16</strong> do not need a fishing licence, but they still follow the rules. Anglers 16 to 64 need a sportfishing licence. Alberta residents 65 and over don't (<a href="https://www.albertaregulations.ca/fishingregs/licensing.html" rel="noopener">official licensing page</a>).</p></div></div>
-<p class="note"><strong>Check before you go:</strong> Always check the official 2026 Alberta Guide to Sport Fishing Regulations before fishing. The Highwood River rules are in the <a href="https://www.albertaregulations.ca/fishingregs/ES1-Rivers.pdf" rel="noopener">official Eastern Slopes (ES1) rivers table</a>. This page is a kid-friendly summary, not legal advice.</p>'''+FISHSEC+COMPACT,full="Family Fishing near High River, Turner Valley & Kananaskis | Foothills Kids Outdoors")
+<p class="note"><strong>Check before you go:</strong> Always check the official 2026 Alberta Guide to Sport Fishing Regulations before fishing. The Highwood River rules are in the <a href="https://www.albertaregulations.ca/fishingregs/ES1-Rivers.pdf" rel="noopener">official Eastern Slopes (ES1) rivers table</a>. This page is a kid-friendly summary, not legal advice.</p>'''+FISHSEC+BRING+COMPACT,full="Family Fishing near High River, Turner Valley & Kananaskis | Foothills Kids Outdoors")
 import datetime as _dt
 EV=sorted(json.load(open("events.json")),key=lambda e:(e["start"],e["title"]))
 _D=lambda d:_dt.date.fromisoformat(d)
@@ -170,7 +174,7 @@ li="".join(f"<li>{f}</li>" for f in finds)
 page("scavenger-hunt.html","Scavenger Hunt",f'''<p class="note noprint newsletter-line">✉️ This is our starter hunt. Want a new themed hunt every week? <a href="{SIGNUP}">Get the weekly newsletter</a></p>
 <div class="noprint hunt-choose"><a class="btn btn-play" href="hunt.html">📱 Play on your phone, no printer needed</a> <button class="btn" onclick="print()">🖨️ Print this card</button></div>
 <div class="hunt"><h1>🏅 {BRAND} Scavenger Quest</h1><p>Explorer or team names: ______________________ Date: __________</p><p>When you spot something, check the box. Work together and keep your eyes open!</p><ul>{li}</ul>
-<p><strong>Find 10 to earn your Trail Explorer badge!</strong></p><p>Leave No Trace: look, don't take. Leave nature the way you found it.</p><p>Bonus: how many sounds can you hear in 60 silent seconds? _____</p></div>''',full="Free Printable Kids' Nature Scavenger Hunt for the Calgary-Area Foothills | Foothills Kids Outdoors")
+<p><strong>Find 10 to earn your Trail Explorer badge!</strong></p><p>Leave No Trace: look, don't take. Leave nature the way you found it.</p><p>Bonus: how many sounds can you hear in 60 silent seconds? _____</p></div>'''+DONEBOX,full="Free Printable Kids' Nature Scavenger Hunt for the Calgary-Area Foothills | Foothills Kids Outdoors")
 ICONS=["🌲","🐾","🪶","🍂","🍎","🪺","🪨","🌿","🕸️","🐦","🌸","🐟","🗑️","🌳","🦌"]
 cards="".join(f'<li><button type="button" class="hcard" aria-pressed="false" data-i="{i}"><span class="hi" aria-hidden="true">{ICONS[i]}</span><span class="ht">{f}</span><span class="hc" aria-hidden="true">✓</span></button></li>' for i,f in enumerate(finds))
 HJS=r"""<script>(()=>{const K='fko-hunt-quest-v1',b=[...document.querySelectorAll('.hcard')],n=b.length;let s;try{s=JSON.parse(localStorage.getItem(K))||[]}catch(e){s=[]}
@@ -186,22 +190,99 @@ page("hunt.html","Phone Scavenger Hunt",f'''<div class="phunt"><h1>📱 Scavenge
 <ul class="hlist">{cards}</ul>
 <div id="hdone" class="hdone" tabindex="-1" hidden><h2>🎉 You did it!</h2><p>Every item found. Want a new hunt every week? <a href="{SIGNUP}">Get the weekly newsletter.</a></p></div>
 <p class="hfoot">Leave No Trace: look, don't take.</p>
-<p><button type="button" id="hreset" class="btn">↺ Start over</button> <a href="scavenger-hunt.html">🖨️ Prefer paper? Print the card</a></p></div><div id="confetti" aria-hidden="true"></div>''',HJS,full="Phone Nature Scavenger Hunt for Kids: Okotoks to Kananaskis | Foothills Kids Outdoors")
+<p><button type="button" id="hreset" class="btn">↺ Start over</button> <a href="scavenger-hunt.html">🖨️ Prefer paper? Print the card</a></p></div><div id="confetti" aria-hidden="true"></div>'''+DONEBOX,HJS,full="Phone Nature Scavenger Hunt for Kids: Okotoks to Kananaskis | Foothills Kids Outdoors")
 page("leaders.html","Leaders",'''<h1>🧭 Groups &amp; Leaders</h1><p>For anyone leading kids outdoors: family groups, school classes, and club or youth leaders.</p><div class="grid">
 <div class="card"><h2>Plan an outing</h2><p>Use the <a href="directory.html">directory</a> and <a href="calendar.html">calendar</a> to pick an age-appropriate activity.</p></div>
 <div class="card"><h2>Printables</h2><p>Grab the <a href="scavenger-hunt.html">scavenger hunt card</a> for your group.</p></div>
 <div class="card"><h2>Safety checklist</h2><ul><li>Adult-to-kid ratios</li><li>Permission forms</li><li>First-aid kit</li><li>Weather &amp; wildlife check</li></ul></div>
-<div class="card"><h2>Share your group</h2><p>Know a great kids\' outdoor spot or program? Tell us on <a href="https://www.facebook.com/FoothillsKidsOutdoors" rel="noopener">Facebook</a>. Always check details with the organizer before an outing.</p></div></div>'''+COMPACT,full="Taking Kids' Groups Outdoors in the Calgary-Area Foothills | Foothills Kids Outdoors")
+<div class="card"><h2>Share your group</h2><p>Know a great kids\' outdoor spot or program? Tell us on <a href="https://www.facebook.com/profile.php?id=61595326322930" rel="noopener">Facebook</a>. Always check details with the organizer before an outing.</p></div></div>'''+COMPACT,full="Taking Kids' Groups Outdoors in the Calgary-Area Foothills | Foothills Kids Outdoors")
 page("sponsors.html","Sponsors",'''<h1>🤝 Sponsor the Adventure</h1><p>Help local kids get outside by supporting a free Foothills outdoor guide for families.</p><div class="grid">
 <div class="card"><span class="badge">Tier</span><h2>🌱 Trail Buddy</h2><p>Name on sponsors page.</p></div>
 <div class="card"><span class="badge">Tier</span><h2>🌲 Trail Guide</h2><p>Logo on sponsors page and a printable.</p></div>
 <div class="card"><span class="badge">Tier</span><h2>⛰️ Summit Partner</h2><p>Featured placement on the home page.</p></div></div>
-<p class="note"><strong>Contact us for rates.</strong> Message us on <a href="https://www.facebook.com/FoothillsKidsOutdoors" rel="noopener">Facebook</a> to talk about sponsoring.</p>'''+COMPACT,full="Sponsor a Family Outdoor Guide for Longview, Turner Valley & High River | Foothills Kids Outdoors")
+<p class="note"><strong>Contact us for rates.</strong> Message us on <a href="https://www.facebook.com/profile.php?id=61595326322930" rel="noopener">Facebook</a> to talk about sponsoring.</p>'''+COMPACT,full="Sponsor a Family Outdoor Guide for Longview, Turner Valley & High River | Foothills Kids Outdoors")
 page("about.html","About",f'''<h1>About {BRAND}</h1><p>{BRAND} is a family-friendly directory of outdoor activities for kids of all ages, from toddlers to teens, around Longview and the Foothills, Alberta, made for parents, grandparents and group leaders.</p>
 <p>Our goal is simple: help families get outside together and make every outing feel like an adventure, whether that's a new trail, a first fish or a scavenger hunt.</p>
 <p class="note">Directory listings link to each organizer\'s public page. Details change, so check with the organizer and official sources for rules, closures and conditions before you go.</p>'''+COMPACT,full="About Foothills Kids Outdoors: Kids' Outdoor Guide for Longview & the Foothills")
 
-_ORDER=["index.html","directory.html","calendar.html","fishing.html","scavenger-hunt.html","hunt.html","leaders.html","sponsors.html","about.html"]
+def _vol(i,n,org,d,age,when,links):
+    l=" &middot; ".join(f'<a href="{E(u)}" rel="noopener">{t}</a>' for t,u in links)
+    return f'<div class="card" id="{i}"><h3>{n}</h3><p>{d}</p><ul class="meta"><li><strong>Organizer:</strong> {org}</li><li><strong>Ages:</strong> {age}</li><li><strong>When:</strong> {when}</li></ul><p class="org">{l}</p></div>'
+VOL=[
+("okotoks-cleanup","🌱 Okotoks Community Clean Up and Tree Planting","Town of Okotoks (with Parks &amp; Recreation)","A spring cleanup of the Sheep River valley plus tree planting. There's a cleanup BINGO card with prizes and a free volunteer BBQ. Tree planters bring shovels, gloves, closed-toe shoes and eye protection.","Open to individuals and families. No minimum age given, check with organizer.","Every spring. The 2026 event was Saturday, May 9; the 2027 date isn't posted yet.",[("Town of Okotoks event page","https://www.okotoks.ca/your-community/living-okotoks/community-event-calendar/community-clean-and-tree-planting-2026")]),
+("okotoks-litter-free","🗑️ Okotoks Litter-Free Community cleanup kits","Town of Okotoks","Pick up a free kit (gloves, bags and a rec coupon) and do a family litter pick in a park or along a pathway whenever it suits you. Register your cleanup and the town collects the bags. Stay back from busy roads and never pick up needles or glass.","Check with organizer.","Year-round.",[("Town of Okotoks Litter-Free page","https://www.okotoks.ca/your-community/amenities/parks-pathways-playgrounds/litter-free-community")]),
+("calgary-pathway-cleanup","🏞️ Calgary Pathway and River Cleanup","City of Calgary (Calgary Parks)","A citywide cleanup of pathways and riverbanks that has run every year since 1967, and was started by a 12-year-old! Registration is required.","12 and older; 12 to 17-year-olds must come with a parent or guardian. Not for kids under 12.","Every year in early May (2026 was May 1 to 3). Registration opens early in the year.",[("City of Calgary registration page","https://www.calgary.ca/volunteer/pathway-river-cleanup-registration.html")]),
+("sheep-river-bird-count","🐦 Sheep River Christmas Bird Count","Local count circle, Christmas Bird Count (Birds Canada)","A one-day winter bird census around Okotoks, Turner Valley and Black Diamond. Walk a route with a team, or count birds at your backyard feeder. All skill levels welcome, from the youngest birder up.","Check with organizer.","Count season is December 14, 2026 to January 5, 2027. The 2026 circle date isn't posted yet (last year's was Dec 28).",[("Birds Canada Christmas Bird Count","https://www.birdscanada.org/programs/christmas-bird-count"),("Alberta circle list","https://naturecounts.ca/apps/cbc/compilers.jsp?lang=EN&prov=AB")]),
+("high-river-bird-count","🦅 High River Christmas Bird Count","Local count circle, Christmas Bird Count (Birds Canada)","The same friendly winter bird census for the High River circle. Great for curious kids with binoculars.","Check with organizer.","Count season is December 14, 2026 to January 5, 2027. The 2026 date isn't posted yet (last year's was Dec 16).",[("Alberta circle list","https://naturecounts.ca/apps/cbc/compilers.jsp?lang=EN&prov=AB")]),
+("fkc-trail-care","🥾 Friends of Kananaskis Country: Volunteer Trail Care","Friends of Kananaskis Country, with Alberta Parks","Trail care days on Kananaskis trails, from litter pickup to clearing deadfall. Set up a volunteer profile first to get the list of upcoming days. Trail work can be physical, so ask whether a day suits kids.","Check with organizer.","Days are posted through the season by email and on their calendar.",[("Friends of Kananaskis Country volunteer page","https://kananaskis.org/how-to-help/volunteer-programs/"),("Alberta Parks volunteering","https://albertaparks.ca/parks/kananaskis/kananaskis-country/volunteering/")]),
+("junior-forest-wardens","🌲 Junior Forest Wardens (Kananaskis projects)","Junior Forest Wardens, Bragg Creek club (listed by Alberta Parks)","An outdoor club for young people and their families. The local club helps with projects in Kananaskis, like removing buffaloberry shrubs.","Ages 6 to 18 and their families.","Check with organizer.",[("Alberta Parks volunteering page","https://albertaparks.ca/parks/kananaskis/kananaskis-country/volunteering/")]),
+("cross-conservation","🦌 Ann &amp; Sandy Cross Conservation Area volunteers","Ann &amp; Sandy Cross Conservation Area","Help care for the land, support nature education programs and welcome visitors at this conservation area west of Okotoks. A volunteer application form is required.","Check with organizer.","Year-round.",[("Cross Conservation volunteer page","https://www.crossconservation.org/about/volunteer/")]),
+]
+page("volunteer.html","Volunteer",f'''<h1>🌿 Volunteer with your kids</h1><p>Giving back outdoors is one of the best family adventures. Around the Alberta foothills, families can plant trees, pick up litter along the river, count winter birds and help care for trails. Kids learn to look after the places they love, and everyone gets fresh air together.</p>
+<p class="note"><strong>Dates change, so always confirm with the organizer.</strong> Ages, dates and sign-up rules come from each organizer's own page and can change from year to year. Use the links on each card to check before you go.</p>
+<div class="grid">'''+"".join(_vol(*v) for v in VOL)+"</div>"+COMPACT,full="Volunteer with Your Kids in the Alberta Foothills | Foothills Kids Outdoors")
+
+# Newsletter-only subscriber hunt (not in NAV or sitemap)
+_S=lambda t:re.sub(r"\*\*(.+?)\*\*",r"<strong>\1</strong>",t)
+FC=["⭐ A fallen golden or brown **trembling aspen** leaf on the ground (round with a pointy tip). Look up: are most aspen branches bare now?",
+"⭐ A white aspen trunk with black marks (they look like eyes!)",
+"⭐ Bright red-orange **wild rose hips** (wild rose is Alberta's flower)",
+"⭐ A **black-billed magpie**: black and white with a long tail",
+"⭐ Hear a **black-capped chickadee** say \"chick-a-dee-dee-dee\"",
+"⭐ White **snowberry** berries on a bare shrub (don't eat; they can make you sick)",
+"⭐ A leaf that is three colours at once",
+"⭐⭐ **Red-osier dogwood**: bright red stems near water or wet ground",
+"⭐⭐ **Balsam poplar**: big buds that are sticky and smell sweet (just sniff, don't pick)",
+"⭐⭐ **Chokecherry** shrub: look for leftover dark, dried cherries or bare stems of the clusters, and smooth reddish-brown bark with tiny lines (look only, don't eat)",
+"⭐⭐ **Saskatoon** shrub: find a fallen rounded leaf with teeth on the top half only, or a shrub with smooth grey bark",
+"⭐⭐ A tree that stays green: is it a spruce (sharp, square needles), pine (needles in pairs/bundles) or fir (flat, soft)? Circle: spruce / pine / fir (firs are rarer down low; you might find one closer to the mountains)",
+"⭐⭐ A **mule deer** or signs it was browsing: nibbled twig tips. Bonus: big ears, white rump, black-tipped tail",
+"⭐⭐ Geese flying in a \"V\" or honking overhead (some Canada geese stay all winter!). Count them: ____"]
+assert len(FC)==14
+_fcli="".join(f'<li><span class="fcbox" aria-hidden="true"></span><span>{_S(E(x,quote=False))}</span></li>' for x in FC)
+FCICONS=["🍂","🌳","🌹","🐦","🎶","⚪","🍁","🔴","🌱","🍒","🫐","🌲","🦌","🪿"]
+assert len(FCICONS)==len(FC)
+_fccards="".join(f'<li><button type="button" class="hcard" aria-pressed="false" data-i="{i}"><span class="hi" aria-hidden="true">{FCICONS[i]}</span><span class="ht">{_S(E(x,quote=False))}</span><span class="hc" aria-hidden="true">✓</span></button></li>' for i,x in enumerate(FC))
+FCJS=HJS.replace("fko-hunt-quest-v1","fko-hunt-01-fall-colours-v1")
+assert FCJS!=HJS
+FCCSS="""<style>
+.phunt .fcline{font-weight:600}
+.phunt .fcsafe{border:4px solid #e85d04;background:#fff3e6;border-radius:16px;padding:.7rem 1rem;margin:.8rem 0;font-size:1.05em}
+.phunt .fcbadge{font-size:1.15em}
+.fcprint{display:none}
+@media print{
+@page{size:letter;margin:.4in}
+.hero-head,header,footer,nav,.signup,.noprint,.share,.hprog,.hdone,#confetti,.htoast{display:none!important}
+body{background:#fff!important;font-size:9.6pt;line-height:1.25}
+main{padding:0!important;margin:0!important;max-width:none!important}
+.phunt{max-width:none;border:2px solid #000;padding:.3in .4in}
+.phunt h1{font-size:17pt;margin:0 0 4pt;color:#000}
+.phunt p{margin:3pt 0}
+.phunt .fcsafe{border:3px solid #000;background:#fff;padding:4pt 7pt;margin:5pt 0;font-size:10pt;border-radius:6px}
+.phunt .hlist{display:block;margin:4pt 0}
+.phunt .hlist li{margin:2pt 0}
+.phunt .hcard{min-height:0!important;padding:0!important;border:0!important;box-shadow:none!important;background:#fff!important;color:#000!important;font-size:9.6pt!important;gap:6pt!important;align-items:flex-start!important}
+.phunt .hcard .hi{display:none}
+.phunt .hcard .ht::before{content:"";flex:0 0 auto;display:inline-block;width:.95em;height:.95em;border:2px solid #000;border-radius:3px;margin-right:6pt;vertical-align:-2pt}
+.phunt .hcard .hc{display:none!important}
+.phunt .hcard[aria-pressed=true] .ht{text-decoration:none}.phunt .hcard .ht::after{content:none!important}
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>"""
+page("hunt-01-fall-colours.html","Fall Colours Quest",FCCSS+f'''<div class="phunt"><h1>🍂 Fall Colours Quest</h1><p class="newsletter-line noprint">✉️ This is this week's subscriber hunt from the {BRAND} newsletter. Thanks for reading!</p><p class="noprint">Tap an item when you spot it. Your progress saves on this phone only. Nothing is uploaded, no account needed. Or print it.</p>
+<p class="fcline">Explorer/team: ____________________ &nbsp;Date: ________ &nbsp;Where: ____________________</p>
+<p class="fcsafe">🧡 <strong>Safety:</strong> Fall is hunting season in the foothills. Wear bright colours (blaze orange is great), stay on marked trails, keep an adult along. Never taste wild berries. Give wildlife lots of space.</p>
+<p>⭐ = easy (ages 6–8) · ⭐⭐ = harder (ages 10–13). Check the box when you find it!</p>
+<div class="hprog"><div class="hbarwrap" role="progressbar" aria-label="Items found" aria-valuemin="0" aria-valuemax="{len(FC)}" aria-valuenow="0"><div id="hbar" class="hbar"></div></div><p id="htxt" class="htxt" aria-live="polite">0 of {len(FC)} found</p></div>
+<ul class="hlist">{_fccards}</ul>
+<div id="hdone" class="hdone" tabindex="-1" hidden><h2>🎉 You did it!</h2><p>Every item found. Watch your inbox for next week's hunt.</p></div>
+<p class="fcbadge"><strong>Find 10 to earn your Fall Colours badge!</strong></p>
+<p class="hfoot">🍂 <strong>Leave No Trace:</strong> Take photos and drawings, not leaves or berries. <strong>Don't pick anything in provincial parks or natural areas</strong>, where it isn't allowed. Stay on trails.</p>
+<p>Bonus: draw your favourite leaf on the back and colour it in.</p>
+<p class="noprint"><button type="button" id="hreset" class="btn">↺ Start over</button> <button type="button" class="btn" onclick="print()">🖨️ Print this hunt</button></p></div><div id="confetti" aria-hidden="true"></div>'''+DONEBOX,FCJS,full="Fall Colours Quest: Subscriber Scavenger Hunt 01 | Foothills Kids Outdoors")
+PAGES.remove("hunt-01-fall-colours.html")
+
+_ORDER=["index.html","directory.html","calendar.html","fishing.html","scavenger-hunt.html","hunt.html","volunteer.html","leaders.html","sponsors.html","about.html"]
 assert sorted(_ORDER)==sorted(PAGES)
 open("sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f'<url><loc>{BASE}{"" if p=="index.html" else p}</loc><lastmod>{_dt.date.today().isoformat()}</lastmod></url>\n' for p in _ORDER)+'</urlset>\n')
 open("robots.txt","w").write(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n")
