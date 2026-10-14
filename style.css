@@ -83,4 +83,4 @@ footer{position:relative;background:var(--dark);padding:0 0 1.5rem}
 .btn-small{padding:.35rem 1rem;font-size:.95rem}
 footer .btn{color:var(--dark)}
 @media print{.signup,.noprint{display:none!important}}
-.card .org .maplink{color:var(--forest);white-space:nowrap}
+.card .mapbtn{display:inline-block;margin:.6rem 0 .2rem;padding:.6rem 1rem;background:var(--forest);color:#fff;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem}.card .mapbtn:hover{filter:brightness(1.15)}
