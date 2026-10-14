@@ -74,3 +74,4 @@ footer{position:relative;background:var(--dark);padding:0 0 1.5rem}
 .card .meta li{margin:.15rem 0}
 .card .org{font-size:.85rem;color:var(--olive);margin:.4rem 0 0}
 .card .advisory{background:#fde2e1;border-left:5px solid #e63946;border-radius:8px;padding:.5rem;font-size:.9rem}
+.brand .logo{width:40px;height:40px;border-radius:50%;vertical-align:middle;margin-right:.3rem}
