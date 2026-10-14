@@ -152,3 +152,14 @@ footer .btn{color:var(--dark)}
 @keyframes hpop{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
 .htoast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:.7rem 1.2rem;border-radius:999px;font-weight:700;z-index:99;opacity:0;transition:opacity .2s;pointer-events:none}
 .htoast.show{opacity:1}
+
+/* ---- Bold home hero title ---- */
+.photohero .herotitle{font-family:"Luckiest Guy","Arial Black",Impact,system-ui,sans-serif;font-weight:400;font-size:clamp(2.4rem,7.5vw,4.6rem);line-height:1.05;letter-spacing:.02em;margin:.2rem 0 .6rem;color:#fff;text-shadow:0 3px 0 #1b4332,0 6px 0 rgba(0,0,0,.35),0 8px 18px rgba(0,0,0,.6);-webkit-text-stroke:1px rgba(0,0,0,.25);overflow-wrap:break-word}
+.photohero .herotitle .accent{color:#ffb703;display:inline-block;transform:rotate(-2deg)}
+.photohero .herosub{font-size:clamp(1.1rem,2.6vw,1.45rem);font-weight:800;margin:0 auto .8rem;max-width:36rem}
+@media(max-width:600px){.photohero .herotitle{font-size:clamp(2.1rem,10vw,2.8rem)}}
+
+/* ---- Fun brand name & hero tagline ---- */
+.brand .brandname{font-family:"Luckiest Guy","Arial Black",Impact,system-ui,sans-serif;font-weight:400;font-size:1.9rem;letter-spacing:.03em;line-height:1;vertical-align:middle;color:#1b4332;text-shadow:2px 2px 0 #ffb703}
+.photohero .herotag{font-family:"Luckiest Guy","Arial Black",Impact,system-ui,sans-serif;font-size:clamp(1.4rem,3.6vw,2.2rem);letter-spacing:.03em;color:#ffb703;margin:0 0 .5rem;text-shadow:0 2px 0 #1b4332,0 4px 10px rgba(0,0,0,.6)}
+@media(max-width:600px){.brand .brandname{font-size:1.25rem}.brand{white-space:nowrap;padding:.3rem .7rem}.photohero .herotag{font-size:1.35rem}}
