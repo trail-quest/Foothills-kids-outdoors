@@ -83,3 +83,4 @@ footer{position:relative;background:var(--dark);padding:0 0 1.5rem}
 .btn-small{padding:.35rem 1rem;font-size:.95rem}
 footer .btn{color:var(--dark)}
 @media print{.signup,.noprint{display:none!important}}
+.card .org .maplink{color:var(--forest);white-space:nowrap}
