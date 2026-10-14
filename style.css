@@ -1,0 +1,76 @@
+/* Palette reused from /workspace/trail-quest/index.html */
+:root{--dark:#283618;--forest:#2d6a4f;--cream:#fefae0;--mint:#e9f5db;--sun:#ffb703;--clay:#dda15e;--olive:#606c38;--leaf:#52b788;--sage:#b5c99a;--water:#a8dadc}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial,sans-serif;background:var(--cream);color:var(--dark);font-size:1.125rem;line-height:1.6}
+a{color:var(--forest)}
+header{background:var(--forest);color:var(--cream);padding:.8rem 1rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem}
+.brand{font-weight:900;font-size:1.6rem;color:var(--cream);text-decoration:none}
+.brand::before{content:"⛰️ "}
+nav a{color:var(--cream);text-decoration:none;font-weight:700;padding:.3rem .7rem;border-radius:999px;display:inline-block}
+nav a:hover,nav a[aria-current]{background:var(--sun);color:var(--dark)}
+main{max-width:1100px;margin:auto;padding:1.5rem 1rem 3rem}
+h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;margin:.5rem 0}
+h2{color:var(--forest)}
+.hero{background:var(--mint);border:4px dashed var(--olive);border-radius:28px;padding:2rem;text-align:center}
+.btn{display:inline-block;background:var(--sun);color:var(--dark);font-weight:800;padding:.7rem 1.4rem;border-radius:999px;text-decoration:none;border:3px solid var(--dark);margin:.3rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.card{background:#fff;border:3px solid var(--sage);border-radius:22px;padding:1.2rem;box-shadow:0 5px 0 var(--olive)}
+.badge{display:inline-block;background:var(--clay);color:var(--dark);font-size:.8rem;font-weight:800;padding:.15rem .6rem;border-radius:999px;text-transform:uppercase}
+.example{background:var(--water)}
+.note{background:#fff3cd;border-left:6px solid var(--sun);padding:1rem;border-radius:12px}
+.filters button{font:inherit;font-weight:700;border:3px solid var(--forest);background:#fff;color:var(--forest);border-radius:999px;padding:.4rem 1rem;margin:.2rem;cursor:pointer}
+.filters button.on{background:var(--forest);color:var(--cream)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden}
+th,td{padding:.7rem;border-bottom:2px solid var(--mint);text-align:left}
+th{background:var(--olive);color:var(--cream)}
+.hunt{background:#fff;border:5px solid var(--forest);border-radius:24px;padding:1.5rem;max-width:700px;margin:auto}
+.hunt ul{list-style:none;padding:0;columns:2}
+.hunt li{margin:.5rem 0;break-inside:avoid}
+.hunt li::before{content:"☐ ";font-size:1.4rem}
+footer{background:var(--dark);color:var(--mint);text-align:center;padding:1.5rem 1rem;font-size:.95rem}
+footer a{color:var(--sun)}
+@media(max-width:600px){header{flex-direction:column}.hunt ul{columns:1}}
+@media print{header,footer,.noprint{display:none!important}body{background:#fff;font-size:12pt}.hunt{border:3px solid #000;max-width:none}.card{box-shadow:none}}
+
+/* ---- Outdoor theme v2 ---- */
+.hero-head{position:relative;display:block;padding:0;background:#8ecae6;min-height:300px;overflow:hidden}
+.scene{position:absolute;inset:0;width:100%;height:100%}
+.head-inner{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.2rem 1rem 6rem;max-width:1200px;margin:auto}
+.brand{color:var(--dark);background:var(--cream);padding:.3rem 1rem;border-radius:16px;border:4px solid var(--dark);box-shadow:0 5px 0 var(--dark)}
+.brand::before{content:none}
+.ico{width:1.3em;height:1.3em;vertical-align:-.25em}
+nav{display:flex;flex-wrap:wrap;gap:.45rem}
+nav a{position:relative;color:var(--cream);border-radius:4px;padding:.35rem .9rem .35rem 1.4rem;margin-bottom:10px;
+ background:repeating-linear-gradient(90deg,#7f5539 0 9px,#8b5e3c 9px 13px,#7a5034 13px 22px);border:2px solid #4a2f1d;
+ clip-path:polygon(0 0,88% 0,100% 50%,88% 100%,0 100%);text-shadow:0 1px 0 #3d2616}
+nav a:hover,nav a[aria-current]{background:var(--sun);color:var(--dark);text-shadow:none}
+h1{color:var(--dark)}
+h2 .sign,h1 .sign{display:inline-block;color:var(--cream);padding:.25rem 1rem;border-radius:8px;border:3px solid #4a2f1d;
+ background:repeating-linear-gradient(0deg,#8b5e3c 0 6px,#7f5539 6px 8px,#946644 8px 14px);box-shadow:0 4px 0 #4a2f1d;text-shadow:0 1px 0 #3d2616;font-size:1.25rem}
+.card{border:3px solid var(--olive);border-radius:18px;box-shadow:0 6px 0 var(--olive);position:relative;
+ background:radial-gradient(circle at 20% 15%,rgba(127,85,57,.06) 0 2px,transparent 3px) 0 0/18px 18px,linear-gradient(#fffdf2,#f6efd6)}
+.card::before{content:"";position:absolute;top:-10px;left:18px;width:22px;height:22px;border-radius:50%;background:var(--sun);border:3px solid var(--dark)}
+.card.example{background:radial-gradient(circle at 20% 15%,rgba(45,106,79,.07) 0 2px,transparent 3px) 0 0/18px 18px,linear-gradient(#eef8f1,#d9efe7)}
+.hero{background:linear-gradient(#fffdf2,#f3ead0);border:4px dashed #7f5539}
+footer{position:relative;background:var(--dark);padding:0 0 1.5rem}
+.grass{display:block;width:100%;height:50px;background:var(--cream)}
+.foot-inner{padding:.5rem 1rem}
+@media(max-width:600px){.hero-head{min-height:340px}.head-inner{flex-direction:column;padding-bottom:5rem}nav a{font-size:.95rem}}
+@media print{.hero-head,.grass{display:none!important}.card::before{display:none}h2 .sign{background:none;color:#000;border:2px solid #000;box-shadow:none;text-shadow:none}.hunt{background:#fff}}
+
+/* ---- Gone Fishin' touches (from /workspace/fishing.html) ---- */
+.water{position:relative;background:linear-gradient(#cdeffa,#7ec8e3);border:4px solid #16405e;border-radius:24px;padding:1.5rem 1.5rem 3rem 5.5rem;color:#16405e;overflow:hidden}
+.water::after{content:"";position:absolute;left:0;right:0;bottom:0;height:28px;background:radial-gradient(circle at 20px -6px,transparent 16px,#3b8fc2 17px) 0 0/40px 28px}
+.water h1{color:#16405e}
+.bobber{position:absolute;left:1.2rem;top:1.2rem;width:48px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px) rotate(6deg)}}
+.fish-grid .card{background:#fff8e7;border-color:#3b8fc2;box-shadow:0 6px 0 #16405e}
+.fish-grid .card::before{background:#e63946}
+@media(prefers-reduced-motion:reduce){.bobber{animation:none}}
+@media(max-width:600px){.water{padding-left:1.5rem;padding-top:4.5rem}}
+.hunt ul{columns:2}
+.safety{margin:1.5rem 0;border-color:#bc6c25;box-shadow:0 6px 0 #7f5539}.safety::before{background:#e63946}
+.card .meta{list-style:none;padding:0;margin:.4rem 0;font-size:.92rem}
+.card .meta li{margin:.15rem 0}
+.card .org{font-size:.85rem;color:var(--olive);margin:.4rem 0 0}
+.card .advisory{background:#fde2e1;border-left:5px solid #e63946;border-radius:8px;padding:.5rem;font-size:.9rem}
