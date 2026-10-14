@@ -94,3 +94,11 @@ footer .btn{color:var(--dark)}
 .card .cardphoto figcaption a{color:#fff;text-decoration:none}
 .card .cardphoto figcaption a:hover{text-decoration:underline}
 @media (max-width:600px){.card .cardphoto,.card .cardphoto img{height:170px}}
+
+/* ---- Representative label, seasonal notes, grid newsletter, anchors ---- */
+.card .cardphoto .repphoto{position:absolute;right:.5rem;top:.5rem;z-index:1;background:rgba(0,0,0,.65);color:#fff;font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:999px}
+.card .seasonal{background:#fff3c4;border-left:5px solid #e9a800;border-radius:8px;padding:.5rem;font-size:.9rem;font-weight:600}
+.grid .gridsignup{grid-column:1/-1;margin:0}
+#list .card{scroll-margin-top:90px}
+@keyframes cardflash{0%,60%{box-shadow:0 0 0 6px var(--sun),0 6px 0 var(--olive)}100%{box-shadow:0 6px 0 var(--olive)}}
+.card.flash{animation:cardflash 2.6s ease-out}

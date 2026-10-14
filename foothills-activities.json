@@ -185,7 +185,9 @@
     "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Highwood_Pass_Alberta_Canada_(24637591878).jpg",
     "photo_license": "CC BY 2.0",
     "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
-    "photo_place_specific": true
+    "photo_place_specific": true,
+    "seasonal": "Seasonal: Hwy 40 (Highwood Pass) closed Dec 1 to Jun 14",
+    "seasonal_source": "https://albertaparks.ca/parks/kananaskis/kananaskis-country/advisories-and-public-safety/annual-road-closures/"
   },
   {
     "name": "Sheep River Provincial Park & Sheep Falls day use",
@@ -206,7 +208,9 @@
     "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Sheep_River_Falls,_Alberta.jpg",
     "photo_license": "CC BY-SA 4.0",
     "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "photo_place_specific": true
+    "photo_place_specific": true,
+    "seasonal": "Seasonal: Hwy 546 west of Sandy McNabb (to Sheep Falls) closed Dec 1 to May 14",
+    "seasonal_source": "https://albertaparks.ca/parks/kananaskis/kananaskis-country/advisories-and-public-safety/annual-road-closures/"
   },
   {
     "name": "West Bragg Creek trails",
