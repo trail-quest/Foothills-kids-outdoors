@@ -526,5 +526,113 @@
   "photo_license": "CC BY 2.0",
   "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
   "photo_place_specific": false
+ },
+ {
+  "name": "Chain Lakes Reservoir fishing",
+  "organizer": "Government of Alberta (regulations)",
+  "location": "Chain Lakes Provincial Park, west of Nanton",
+  "category": "Fishing",
+  "ages": "Under 16: no licence needed",
+  "season": "Open all year",
+  "description": "On Alberta's put-and-take trout stocking list, so catchable trout are stocked. Bait: Bait allowed. Limits: 5 trout (any size), 3 northern pike, 15 yellow perch.",
+  "source": "https://www.albertaregulations.ca/fishingregs/fish-stocking.html",
+  "via": "research",
+  "map": "Chain Lakes Provincial Park, AB"
+ },
+ {
+  "name": "Mount Lorette Ponds fishing",
+  "organizer": "Government of Alberta (regulations)",
+  "location": "Kananaskis Country (Hwy 40)",
+  "category": "Fishing",
+  "ages": "Under 16: no licence needed",
+  "season": "Open all year",
+  "description": "Small, calm ponds with their own special stocked-pond rules. A good size for first casts. Bait: Bait allowed (no bait fish). Limits: 2 trout total; 3 walleye, 3 pike, 15 perch.",
+  "source": "https://www.albertaregulations.ca/fishingregs/ES1-Lakes.pdf",
+  "via": "research",
+  "map": "Mount Lorette Ponds, Kananaskis, AB"
+ },
+ {
+  "name": "Sibbald Lake fishing",
+  "organizer": "Government of Alberta (regulations)",
+  "location": "Kananaskis Country (Hwy 68, west of Calgary)",
+  "category": "Fishing",
+  "ages": "Under 16: no licence needed",
+  "season": "Open all year",
+  "description": "Stocked put-and-take trout lake. Bait: Bait allowed. Limits: 5 trout (any size), 3 northern pike, 15 yellow perch.",
+  "source": "https://www.albertaregulations.ca/fishingregs/fish-stocking.html",
+  "via": "research",
+  "map": "Sibbald Lake, Kananaskis, AB"
+ },
+ {
+  "name": "Sibbald Meadows Pond fishing",
+  "organizer": "Government of Alberta (regulations)",
+  "location": "Kananaskis Country (Hwy 68)",
+  "category": "Fishing",
+  "ages": "Under 16: no licence needed",
+  "season": "Open all year",
+  "description": "Stocked put-and-take trout pond. Bait: Bait allowed. Limits: 5 trout (any size), 3 northern pike, 15 yellow perch.",
+  "source": "https://www.albertaregulations.ca/fishingregs/fish-stocking.html",
+  "via": "research",
+  "map": "Sibbald Meadows Pond, Kananaskis, AB"
+ },
+ {
+  "name": "McLean Pond fishing",
+  "organizer": "Government of Alberta (regulations)",
+  "location": "McLean Creek area, south of Bragg Creek",
+  "category": "Fishing",
+  "ages": "Under 16: no licence needed",
+  "season": "Open all year",
+  "description": "Stocked put-and-take trout pond. Bait: Bait allowed. Limits: 5 trout (any size), 3 northern pike, 15 yellow perch.",
+  "source": "https://www.albertaregulations.ca/fishingregs/fish-stocking.html",
+  "via": "research",
+  "map": "McLean Pond, Kananaskis, AB"
+ },
+ {
+  "name": "Glenmore Reservoir fishing",
+  "organizer": "Government of Alberta (regulations)",
+  "location": "Southwest Calgary",
+  "category": "Fishing",
+  "ages": "Under 16: no licence needed",
+  "season": "May 1 to Oct 31",
+  "description": "A big fishery right in the city, with a season that closes for winter. Bait: Bait allowed (no bait fish). Limits: 5 trout; 5 mountain whitefish over 30 cm; 3 pike; 15 perch.",
+  "source": "https://www.albertaregulations.ca/fishingregs/ES1-Lakes.pdf",
+  "via": "research",
+  "map": "Glenmore Reservoir, Calgary, AB"
+ },
+ {
+  "name": "Wedge Pond fishing",
+  "organizer": "Government of Alberta (regulations)",
+  "location": "Kananaskis Country (Hwy 40)",
+  "category": "Fishing",
+  "ages": "Under 16: no licence needed",
+  "season": "Open all year",
+  "description": "A small pond for practising your cast. Trophy-only harvest, so it's mostly catch and release. Bait: Bait ban. Limits: 1 trout over 50 cm; 0 Arctic grayling.",
+  "source": "https://www.albertaregulations.ca/fishingregs/ES1-Lakes.pdf",
+  "via": "research",
+  "map": "Wedge Pond, Kananaskis, AB"
+ },
+ {
+  "name": "Lower Kananaskis Lake fishing",
+  "organizer": "Government of Alberta (regulations)",
+  "location": "Peter Lougheed Provincial Park, Kananaskis",
+  "category": "Fishing",
+  "ages": "Under 16: no licence needed",
+  "season": "Open all year (except the closed bay)",
+  "description": "Big mountain lake. A good spot for older kids learning lure fishing. Bait: Bait ban. Limits: 1 trout total (size minimums apply; see table).",
+  "source": "https://www.albertaregulations.ca/fishingregs/ES1-Lakes.pdf",
+  "via": "research",
+  "map": "Lower Kananaskis Lake, AB"
+ },
+ {
+  "name": "Upper Kananaskis Lake fishing",
+  "organizer": "Government of Alberta (regulations)",
+  "location": "Peter Lougheed Provincial Park, Kananaskis",
+  "category": "Fishing",
+  "ages": "Under 16: no licence needed",
+  "season": "Open all year; within 100 m of Rawson Creek inlet open Jul 16 to May 31 only",
+  "description": "Mountain lake with day-use areas; mostly catch and release. Bait: Bait ban. Limits: 1 trout total (size minimums apply; see table).",
+  "source": "https://www.albertaregulations.ca/fishingregs/ES1-Lakes.pdf",
+  "via": "research",
+  "map": "Upper Kananaskis Lake, AB"
  }
 ]
