@@ -84,3 +84,13 @@ footer{position:relative;background:var(--dark);padding:0 0 1.5rem}
 footer .btn{color:var(--dark)}
 @media print{.signup,.noprint{display:none!important}}
 .card .mapbtn{display:inline-block;margin:.6rem 0 .2rem;padding:.6rem 1rem;background:var(--forest);color:#fff;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem}.card .mapbtn:hover{filter:brightness(1.15)}
+
+/* activity card photos */
+.card.hasphoto{overflow:visible}
+.card.hasphoto::before{z-index:2}
+.card .cardphoto{position:relative;margin:-1.2rem -1.2rem .8rem;height:180px}
+.card .cardphoto img{display:block;width:100%;height:180px;object-fit:cover;border-radius:15px 15px 0 0;background:#dfe9df}
+.card .cardphoto figcaption{position:absolute;right:0;bottom:0;max-width:100%;padding:.15rem .5rem;background:rgba(0,0,0,.55);border-top-left-radius:8px;font-size:.68rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .cardphoto figcaption a{color:#fff;text-decoration:none}
+.card .cardphoto figcaption a:hover{text-decoration:underline}
+@media (max-width:600px){.card .cardphoto,.card .cardphoto img{height:170px}}

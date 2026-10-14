@@ -9,7 +9,14 @@
     "description": "Explore 35 historic ranch buildings, meet the Percheron horses on the free wagon shuttle, and try roping a replica steer.",
     "source": "https://www.parks.canada.ca/lhn-nhs/ab/baru/activ/experiences",
     "via": "research",
-    "map": "Bar U Ranch National Historic Site, Longview, AB"
+    "map": "Bar U Ranch National Historic Site, Longview, AB",
+    "photo": "images/act/bar-u-ranch.jpg",
+    "photo_alt": "Red historic ranch buildings and old farm machinery at Bar U Ranch National Historic Site",
+    "photo_credit": "Photo: Traveler100, CC BY-SA 3.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:BarURanch-03.jpg",
+    "photo_license": "CC BY-SA 3.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "photo_place_specific": true
   },
   {
     "name": "Parks Canada Xplorers at Bar U Ranch",
@@ -21,7 +28,14 @@
     "description": "Kids complete Xplorers challenges while visiting and earn a collectible Parks Canada reward.",
     "source": "https://www.parks.canada.ca/voyage-travel/experiences/famille-family/xplorateurs-xplorers",
     "via": "research",
-    "map": "Bar U Ranch National Historic Site, Longview, AB"
+    "map": "Bar U Ranch National Historic Site, Longview, AB",
+    "photo": "images/act/bar-u-xplorers.jpg",
+    "photo_alt": "Bar U Ranch buildings and fences with mountains behind, seen from the interpretive centre",
+    "photo_credit": "Photo: David Mathew, CC BY-SA 3.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Bar_U_National_Historic_Site.JPG",
+    "photo_license": "CC BY-SA 3.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "photo_place_specific": true
   },
   {
     "name": "Bar U Ranch walking trails (Pekisko Creek, Viewpoint, Riparian)",
@@ -33,7 +47,14 @@
     "description": "A 3 km creekside trail plus shorter strolls to red chairs and a ridge viewpoint, with shady picnic spots.",
     "source": "https://www.parks.canada.ca/lhn-nhs/ab/baru/activ/experiences",
     "via": "research",
-    "map": "Bar U Ranch National Historic Site, Longview, AB"
+    "map": "Bar U Ranch National Historic Site, Longview, AB",
+    "photo": "images/act/bar-u-trails.jpg",
+    "photo_alt": "Panorama of Bar U Ranch buildings and road below the Rocky Mountains",
+    "photo_credit": "Photo: Royalbroil, CC BY-SA 3.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Bar_U_Ranch_Panorama_ID_11640.jpg",
+    "photo_license": "CC BY-SA 3.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "photo_place_specific": true
   },
   {
     "name": "Ann & Sandy Cross Conservation Area trails",
@@ -45,7 +66,14 @@
     "description": "About 20 km of interpretive trails through aspen forest and grassland on a protected wildlife area.",
     "source": "https://www.crossconservation.org/about/",
     "via": "research",
-    "map": "Ann & Sandy Cross Conservation Area, 194001 160 St W, Foothills, AB"
+    "map": "Ann & Sandy Cross Conservation Area, 194001 160 St W, Foothills, AB",
+    "photo": "images/act/cross-trails.jpg",
+    "photo_alt": "Golden grassland and rolling hills at Ann & Sandy Cross Conservation Area",
+    "photo_credit": "Photo: Thank you for visiting my page from Canada, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Ann_and_Sandy_Cross_Conservation_area_Calgary_(23879409418).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": true
   },
   {
     "name": "Cross Conservation Area guided nature programs",
@@ -57,7 +85,14 @@
     "description": "Guided hikes and outdoor conservation education about local plants, wildlife and habitat.",
     "source": "https://www.crossconservation.org/about/",
     "via": "research",
-    "map": "Ann & Sandy Cross Conservation Area, 194001 160 St W, Foothills, AB"
+    "map": "Ann & Sandy Cross Conservation Area, 194001 160 St W, Foothills, AB",
+    "photo": "images/act/cross-programs.jpg",
+    "photo_alt": "A white tipi beside a path in the grassland at Ann & Sandy Cross Conservation Area",
+    "photo_credit": "Photo: Thank you for visiting my page from Canada, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Ann_and_Sandy_Cross_Conservation_area_Calgary_(37022770194).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": true
   },
   {
     "name": "Kananaskis public interpretive programs",
@@ -68,7 +103,14 @@
     "season": "Mainly summer",
     "description": "Free, no-reservation family programs, amphitheatre shows and chats with park interpreters.",
     "source": "https://new.albertaparks.ca/parks/kananaskis/kananaskis-country/activities-events/public-interpretive-programs/",
-    "via": "research"
+    "via": "research",
+    "photo": "images/act/kananaskis-programs.jpg",
+    "photo_alt": "A bighorn sheep standing in autumn grass in Kananaskis Country (general Kananaskis photo, not a program site)",
+    "photo_credit": "Photo: Jakub Fryš, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Bighorn_Sheep_-_Kananaskis.jpg",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": false
   },
   {
     "name": "Animal Hour at William Watson Lodge",
@@ -80,7 +122,14 @@
     "description": "Free interactive wildlife talk where kids can ask questions and touch animal artifacts.",
     "source": "https://www.albertaparks.ca/parks/kananaskis/peter-lougheed-pp/information-facilities/special-facilities/william-watson-lodge/william-watson-lodge-events/animal-hour/",
     "via": "research",
-    "map": "William Watson Lodge, Peter Lougheed Provincial Park, Kananaskis, AB"
+    "map": "William Watson Lodge, Peter Lougheed Provincial Park, Kananaskis, AB",
+    "photo": "images/act/william-watson-animal-hour.jpg",
+    "photo_alt": "Snowy shore of Lower Kananaskis Lake with mountains in Peter Lougheed Provincial Park (not the lodge itself)",
+    "photo_credit": "Photo: Thank you for visiting my page from Canada, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Lower_Kananaskis_Lake_Alberta_Canada_(24640269357).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": true
   },
   {
     "name": "Peter Lougheed Provincial Park",
@@ -92,7 +141,14 @@
     "description": "Family trails in summer and snowshoeing in winter in the heart of Kananaskis.",
     "source": "https://www.albertaparks.ca/parks/kananaskis/peter-lougheed-pp/",
     "via": "COO list + research",
-    "map": "Peter Lougheed Provincial Park Visitor Information Centre, Kananaskis, AB"
+    "map": "Peter Lougheed Provincial Park Visitor Information Centre, Kananaskis, AB",
+    "photo": "images/act/peter-lougheed.jpg",
+    "photo_alt": "Road and lake below snow-capped peaks in Peter Lougheed Provincial Park",
+    "photo_credit": "Photo: Evrooyen55, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Peter_Lougheed_Provincial_Park.jpg",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": true
   },
   {
     "name": "Kananaskis Country trails & day-use areas",
@@ -103,7 +159,14 @@
     "season": "Year-round; some roads gated in winter; Conservation Pass required to park",
     "description": "Mountain trails and picnic areas a short drive west of the Foothills towns.",
     "source": "https://www.albertaparks.ca/parks/kananaskis/kananaskis-country/",
-    "via": "COO list"
+    "via": "COO list",
+    "photo": "images/act/kananaskis-trails.jpg",
+    "photo_alt": "Troll Falls pouring over a rock cliff in Kananaskis Country",
+    "photo_credit": "Photo: Stephanie Macleod, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Troll_Falls.jpg",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": true
   },
   {
     "name": "Highwood Pass / Hwy 40 South scenic drive",
@@ -115,7 +178,14 @@
     "description": "A high-alpine scenic drive with trailheads; go before the Dec 1 closure and dress for mountain weather.",
     "source": "https://www.albertaparks.ca/parks/kananaskis/kananaskis-country/advisories-public-safety/annual-road-closures/",
     "via": "COO list",
-    "map": "Highwood Pass, Kananaskis, AB"
+    "map": "Highwood Pass, Kananaskis, AB",
+    "photo": "images/act/highwood-pass.jpg",
+    "photo_alt": "Snowy Highway 40 at Highwood Pass with evergreen forest",
+    "photo_credit": "Photo: Thank you for visiting my page from Canada, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Highwood_Pass_Alberta_Canada_(24637591878).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": true
   },
   {
     "name": "Sheep River Provincial Park & Sheep Falls day use",
@@ -129,7 +199,14 @@
     "via": "COO list + research",
     "advisory": "Active Alberta Parks safety advisory: washed-out bridge material in the Sheep River about 100 m downstream of Indian Oils Day Use creates a strainer hazard. Use caution near the water.",
     "advisory_source": "https://cms.albertaparks.ca/parks/kananaskis/sheep-river-pp/information-facilities/day-use/sheep-falls/",
-    "map": "Sheep Falls Day Use Area, Sheep River Provincial Park, AB"
+    "map": "Sheep Falls Day Use Area, Sheep River Provincial Park, AB",
+    "photo": "images/act/sheep-river-falls.jpg",
+    "photo_alt": "Black-and-white photo of Sheep River Falls in Sheep River Provincial Park",
+    "photo_credit": "Photo: SirTropical, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Sheep_River_Falls,_Alberta.jpg",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": true
   },
   {
     "name": "West Bragg Creek trails",
@@ -141,7 +218,14 @@
     "description": "A big trail network for hiking, snowshoeing and cross-country skiing, with some equestrian trails.",
     "source": "https://www.albertaparks.ca/parks/kananaskis/west-bragg-creek-pra/information-facilities/trails/",
     "via": "research",
-    "map": "West Bragg Creek Day Use Area, Bragg Creek, AB"
+    "map": "West Bragg Creek Day Use Area, Bragg Creek, AB",
+    "photo": "images/act/west-bragg-creek.jpg",
+    "photo_alt": "Cross-country skiers on a snowy forest trail in Kananaskis (general Kananaskis photo, not West Bragg Creek)",
+    "photo_credit": "Photo: Glenlarson, Public domain",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Skiing_kananaskis_018.jpg",
+    "photo_license": "Public domain",
+    "photo_license_url": "",
+    "photo_place_specific": false
   },
   {
     "name": "Okotoks Erratic (Big Rock)",
@@ -153,7 +237,14 @@
     "description": "A giant glacier-carried boulder with a great story; stay off the rock, a protected Indigenous cultural site.",
     "source": "https://www.alberta.ca/okotoks-erratic-big-rock",
     "via": "COO list",
-    "map": "Okotoks Erratic (Big Rock), Highway 7, AB"
+    "map": "Okotoks Erratic (Big Rock), Highway 7, AB",
+    "photo": "images/act/okotoks-erratic.jpg",
+    "photo_alt": "The huge Okotoks Erratic (Big Rock) boulder on the prairie with a path leading to it",
+    "photo_credit": "Photo: Thank you for visiting my page from Canada, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Okotoks_Erratic_(37069018896).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": true
   },
   {
     "name": "Highwood River fishing",
@@ -164,7 +255,14 @@
     "season": "Mostly June 16 - Oct 31; varies by stretch",
     "description": "A classic Foothills river with a bait ban and mostly catch-and-release trout; see our fishing page.",
     "source": "https://www.albertaregulations.ca/fishingregs/ES1-Rivers.pdf",
-    "via": "COO list"
+    "via": "COO list",
+    "photo": "images/act/highwood-river.jpg",
+    "photo_alt": "The clear Highwood River flowing past forest near Highwood Pass in Kananaskis Country",
+    "photo_credit": "Photo: Wheateater, Public domain",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Highwood_River_AB.JPG",
+    "photo_license": "Public domain",
+    "photo_license_url": "",
+    "photo_place_specific": true
   },
   {
     "name": "Family fishing on the Sheep River",
@@ -175,7 +273,14 @@
     "season": "Check Alberta regulations",
     "description": "The town recommends the Sheep River for family fishing, with Highwood River, Cataract Creek and Chain Lakes nearby.",
     "source": "https://www.diamondvalley.town/194/Recreation-Leisure",
-    "via": "research"
+    "via": "research",
+    "photo": "images/act/sheep-river-fishing.jpg",
+    "photo_alt": "The forested Sheep River gorge in Kananaskis Country (upstream of Diamond Valley)",
+    "photo_credit": "Photo: SaltedSturgeon, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Sheep_River_gorge.jpg",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": true
   },
   {
     "name": "Kids Can Catch (family fishing events)",
@@ -186,7 +291,14 @@
     "season": "Event dates posted on the ACA site",
     "description": "Free events where mentors help new anglers bait, cast and safely release fish.",
     "source": "https://www.ab-conservation.com/events/kids-can-catch/",
-    "via": "research"
+    "via": "research",
+    "photo": "images/act/kids-can-catch.jpg",
+    "photo_alt": "Upper Kananaskis Lake below snowy mountains (general Alberta scenery, not an event site)",
+    "photo_credit": "Photo: Thank you for visiting my page from Canada, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Upper_Kananaskis_lake_Alberta_Canada_(31594955311).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": false
   },
   {
     "name": "Family Day Ice Fishing at Chain Lakes",
@@ -198,7 +310,14 @@
     "description": "Free Kids Can Catch ice-fishing day with loaner rods, pre-drilled holes and mentors; RSVP required.",
     "source": "https://okotoksfishandgame.com/okotoks-family-day-ice-fishing/",
     "via": "research",
-    "map": "Chain Lakes Provincial Park, AB"
+    "map": "Chain Lakes Provincial Park, AB",
+    "photo": "images/act/chain-lakes.jpg",
+    "photo_alt": "Green rolling foothills and trees at Chain Lakes Provincial Park in summer",
+    "photo_credit": "Photo: CV1958, CC BY 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Chain_Lakes_Provincial_Park_01.jpg",
+    "photo_license": "CC BY 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/4.0",
+    "photo_place_specific": true
   },
   {
     "name": "Ice fishing safety",
@@ -209,7 +328,14 @@
     "season": "Only once ice is safe",
     "description": "Never walk on less than 10 cm of ice and avoid aerated lakes and moving water.",
     "source": "https://mywildalberta.ca/fishing/safety-procedures/ice-safety-tips/default.aspx",
-    "via": "COO list"
+    "via": "COO list",
+    "photo": "images/act/ice-fishing-safety.jpg",
+    "photo_alt": "An adult ice fishing on a frozen lake in the McLean Creek area of Kananaskis (general photo)",
+    "photo_credit": "Photo: Thank you for visiting my page from Canada, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Ice_on_the_lake_maclean_creek_kananaskis_Alberta_Canada_(23581097116).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": false
   },
   {
     "name": "Foothills Archery Club",
@@ -220,7 +346,14 @@
     "season": "Website last updated 2019; confirm the club is active",
     "description": "A volunteer club affiliated with Archery Alberta that welcomes families of all ages and abilities.",
     "source": "https://foothillsarcheryab.wordpress.com/",
-    "via": "research"
+    "via": "research",
+    "photo": "images/act/foothills-archery.jpg",
+    "photo_alt": "The Millarville Racing & Agricultural Society Grounds, a past shoot location",
+    "photo_credit": "Photo: Jonathan Schilling, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Millarville_Racing_%26_Agricultural_Society_Grounds.jpg",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": true
   },
   {
     "name": "High River Happy Trails",
@@ -231,7 +364,14 @@
     "season": "Year-round",
     "description": "Over 19 km of paved pathways along the river and through parks for walking and biking.",
     "source": "https://highriver.ca/community/parks-recreation/natural-elements/trails-pathways/happy-trails-for-you",
-    "via": "research"
+    "via": "research",
+    "photo": "images/act/high-river-trails.jpg",
+    "photo_alt": "Aerial view of downtown High River streets and buildings",
+    "photo_credit": "Photo: Connorbrown22, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Photo_of_High_River_Alberta.png",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": true
   },
   {
     "name": "George Lane Memorial Park",
@@ -243,7 +383,14 @@
     "description": "A treed park with a playground and picnic areas, plus skating under the lights and a holiday light display in winter.",
     "source": "https://highriver.ca/town-services/public-works/natural-elements/parks/george-lane-memorial-park-and-campground",
     "via": "research",
-    "map": "George Lane Memorial Park, High River, AB"
+    "map": "George Lane Memorial Park, High River, AB",
+    "photo": "images/act/george-lane-park.jpg",
+    "photo_alt": "The red-roofed George Lane Memorial Band-Stand in George Lane Memorial Park, High River",
+    "photo_credit": "Photo: Jonathan Schilling, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:George_Lane_Memorial_Band-Stand_in_High_River.jpg",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": true
   },
   {
     "name": "High River outdoor skating rink",
@@ -255,7 +402,14 @@
     "description": "A town-maintained outdoor rink that becomes a ball hockey and basketball court in warmer months.",
     "source": "https://highriver.ca/services/leisure-services/rec-facilities-activity-schedules-and-rates/outdoor-sports-facilities",
     "via": "research",
-    "map": "820 Highwood Trail SW, High River, AB"
+    "map": "820 Highwood Trail SW, High River, AB",
+    "photo": "images/act/high-river-rink.jpg",
+    "photo_alt": "Snowy evergreens beside frozen Lower Kananaskis Lake (general winter photo, not the High River rink)",
+    "photo_credit": "Photo: Thank you for visiting my page from Canada, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Lower_Kananaskis_Lake_(15852755977).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": false
   },
   {
     "name": "Okotoks pathways, parks & toboggan hills",
@@ -266,7 +420,14 @@
     "season": "Year-round; 14 outdoor rinks and 6 toboggan hills in winter",
     "description": "100 km of connected pathways, 72 playgrounds, a pump track and BMX track, and winter sledding and skating.",
     "source": "https://www.okotoks.ca/your-community/amenities/parks-pathways-playgrounds",
-    "via": "research + COO list"
+    "via": "research + COO list",
+    "photo": "images/act/okotoks-pathways.jpg",
+    "photo_alt": "Old Macleod Trail sign with a wagon wheel beside a grassy path in Okotoks",
+    "photo_credit": "Photo: Brian Crawford, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Okotoks_Trail_Sign.jpeg",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": true
   },
   {
     "name": "Library in the Wild",
@@ -278,7 +439,14 @@
     "description": "Free outdoor games, crafts and hands-on activities for young kids.",
     "source": "https://okotokslibrary.ca/Events/library-in-the-wild",
     "via": "research",
-    "map": "Okotoks Public Library, 23 Riverside Drive, Okotoks, AB"
+    "map": "Okotoks Public Library, 23 Riverside Drive, Okotoks, AB",
+    "photo": "images/act/library-in-the-wild.jpg",
+    "photo_alt": "The Sheep River flowing through Okotoks among autumn trees",
+    "photo_credit": "Photo: Tonyglen14, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Sheep_River_(45339884532).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": true
   },
   {
     "name": "Nature Fridays",
@@ -290,7 +458,14 @@
     "description": "Drop-in nature crafts, nature walks and outdoor scavenger hunts led by town staff.",
     "source": "https://www.okotoks.ca/your-community/living-okotoks/community-event-calendar/nature-fridays-harmony-nature",
     "via": "research",
-    "map": "Environmental Education Centre, 1118 North Railway Street, Okotoks, AB"
+    "map": "Environmental Education Centre, 1118 North Railway Street, Okotoks, AB",
+    "photo": "images/act/nature-fridays.jpg",
+    "photo_alt": "View over Okotoks homes and autumn trees",
+    "photo_credit": "Photo: Xz1303, CC BY-SA 3.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Okotoks2009.JPG",
+    "photo_license": "CC BY-SA 3.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "photo_place_specific": true
   },
   {
     "name": "Friendship Trail",
@@ -302,7 +477,14 @@
     "description": "A gentle 3 km paved trail with viewpoints, rock formations and the old coal mine site.",
     "source": "https://www.diamondvalley.town/194/Recreation-Leisure",
     "via": "research",
-    "map": "Friendship Trail, Diamond Valley, AB"
+    "map": "Friendship Trail, Diamond Valley, AB",
+    "photo": "images/act/friendship-trail.jpg",
+    "photo_alt": "A street in Black Diamond, Alberta, looking east (the town at one end of the trail, not the trail itself)",
+    "photo_credit": "Photo: Royalbroil, CC BY-SA 4.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Black_Diamond_Alberta_looking_east.jpg",
+    "photo_license": "CC BY-SA 4.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photo_place_specific": false
   },
   {
     "name": "Diamond Valley Bike Pump Track",
@@ -314,7 +496,14 @@
     "description": "A looping dirt track with bumps and berms for pedal bikes.",
     "source": "https://www.diamondvalley.town/facilities/facility/details/Pump-Track-35",
     "via": "research",
-    "map": "Erma Joy Brown Park, 611 3 St SW, Diamond Valley, AB"
+    "map": "Erma Joy Brown Park, 611 3 St SW, Diamond Valley, AB",
+    "photo": "images/act/pump-track.jpg",
+    "photo_alt": "An empty asphalt bicycle pump track in the UK (general photo, not the Diamond Valley track)",
+    "photo_credit": "Photo: Jim Smillie, CC BY-SA 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Bicycle_pump_track_-_geograph.org.uk_-_7352017.jpg",
+    "photo_license": "CC BY-SA 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "photo_place_specific": false
   },
   {
     "name": "Skating on natural ice (safety)",
@@ -325,6 +514,13 @@
     "season": "Winter",
     "description": "Ice should be 15 cm to skate alone and 20 cm for games; avoid ponds over running water.",
     "source": "https://myhealth.alberta.ca/Alberta/Pages/ice-skating-and-hockey.aspx",
-    "via": "COO list"
+    "via": "COO list",
+    "photo": "images/act/natural-ice-skating.jpg",
+    "photo_alt": "Frozen, snow-covered Spray Lakes below mountains in Kananaskis (general winter photo)",
+    "photo_credit": "Photo: Thank you for visiting my page from Canada, CC BY 2.0",
+    "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Spray_Lakes_Alberta_Canada_(30992726553).jpg",
+    "photo_license": "CC BY 2.0",
+    "photo_license_url": "https://creativecommons.org/licenses/by/2.0",
+    "photo_place_specific": false
   }
 ]
