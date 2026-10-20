@@ -30,6 +30,7 @@ DESC = {
  "leaders.html":"Planning tips, printables and a safety checklist for family groups, teachers and club leaders taking kids outdoors around Okotoks, High River and Kananaskis.",
  "sponsors.html":"Sponsor Foothills Kids Outdoors, a free outdoor guide for families in Longview, Turner Valley, Black Diamond, High River and Okotoks. Contact us for rates.",
  "hunt-01-fall-colours.html":"Fall Colours Quest: a printable fall nature scavenger hunt for kids in the Alberta Foothills, from Foothills Kids Outdoors.",
+ "hunt-02-first-snow.html":"First Snow Quest: a printable early-winter nature scavenger hunt for kids in the Alberta foothills, from Foothills Kids Outdoors.",
  "volunteer.html":"Family volunteering in the Alberta Foothills: kid-friendly cleanups, tree planting, bird counts and trail care around Okotoks, High River and Kananaskis.",
  "about.html":"About Foothills Kids Outdoors, a family guide to outdoor adventures for kids of all ages around Longview and the Foothills, south of Calgary.",
 }
@@ -43,24 +44,24 @@ def share(url,title):
     return (f'<p class="share"><span class="sharelbl">Share:</span> <a href="https://www.facebook.com/sharer/sharer.php?u={q}" target="_blank" rel="noopener">Facebook</a> '
             f'<a href="mailto:?subject={t}&amp;body={q}">Email</a> <button type="button" class="sharecopy" data-url="{url}" data-title="{html.escape(title)}">Copy link</button></p>')
 SHJS = """<script>document.addEventListener('click',async e=>{const b=e.target.closest('.sharecopy');if(!b)return;const url=b.dataset.url,title=b.dataset.title;if(navigator.share){try{await navigator.share({title,url})}catch(err){}return}try{await navigator.clipboard.writeText(url);b.textContent='Copied!'}catch(err){prompt('Copy this link:',url);return}setTimeout(()=>b.textContent='Copy link',1800)})</script>"""
-NAV = [("index.html","Home"),("directory.html","Directory"),("fishing.html","Fishing"),("calendar.html","Calendar"),("scavenger-hunt.html","Scavenger Hunt"),("volunteer.html","Volunteer"),("leaders.html","Groups &amp; Leaders"),("sponsors.html","Sponsors"),("about.html","About")]
+NAV = [("index.html","Home"),("directory.html","Directory"),("fishing.html","Fishing"),("camping-foothills.html","Camping"),("gardening.html","Gardening"),("calendar.html","Calendar"),("scavenger-hunt.html","Scavenger Hunt"),("volunteer.html","Volunteer"),("leaders.html","Groups &amp; Leaders")]
 E=html.escape
 PAGES=[]
-def page(fn,title,body,script="",full=None,ogimg=None,ogalt=None):
+def page(fn,title,body,script="",full=None,ogimg=None,ogalt=None,ogw=None,ogh=None,navcur=None):
     OGIMG=ogimg or globals()["OGIMG"]; OGALT=ogalt or globals()["OGALT"]
     full=full or f"{title} | {BRAND}"; PAGES.append(fn); d=DESC[fn]; url=BASE+("" if fn=="index.html" else fn)
     body=re.sub(r"<h2>(.*?)</h2>",r'<h2><span class="sign">\1</span></h2>',body,flags=re.S)
-    nav="".join(f'<a href="{h}"{" aria-current=page" if h==fn else ""}>{t}</a>' for h,t in NAV)
+    nav="".join(f'<a href="{h}"{" aria-current=page" if h==(navcur or fn) else ""}>{t}</a>' for h,t in NAV)
     open(fn,"w").write(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(full)}</title>
 <meta name="description" content="{d}"><link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="{BRAND}"><meta property="og:title" content="{E(full)}"><meta property="og:description" content="{d}"><meta property="og:url" content="{url}">
-<meta property="og:image" content="{OGIMG}"><meta property="og:image:width" content="{1200 if ogimg else 800}"><meta property="og:image:height" content="{630 if ogimg else 450}"><meta property="og:image:alt" content="{OGALT}">
+<meta property="og:image" content="{OGIMG}"><meta property="og:image:width" content="{ogw or (1200 if ogimg else 800)}"><meta property="og:image:height" content="{ogh or (630 if ogimg else 450)}"><meta property="og:image:alt" content="{OGALT}">
 <meta name="twitter:site" content="@FoothillsKidsAB"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(full)}"><meta name="twitter:description" content="{d}"><meta name="twitter:image" content="{OGIMG}"><meta name="twitter:image:alt" content="{OGALT}">
-<link rel="icon" type="image/png" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&amp;display=swap"><link rel="stylesheet" href="style.css?v=8"></head><body>
-<header class="hero-head">{SCENE}<div class="head-inner"><a class="brand" href="index.html"><img class="logo" src="images/logo.png" alt="Foothills Kids Outdoors" width="40" height="40"> <span class="brandname">{BRAND}</span></a><nav>{nav}</nav></div></header>
+<link rel="icon" type="image/png" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&amp;display=swap"><link rel="stylesheet" href="style.css?v=11"></head><body>
+<header class="hero-head">{SCENE}<div class="head-inner"><a class="brand" href="index.html"><img class="logo" src="images/logo.png" alt="Foothills Kids Outdoors" width="40" height="40"> <span class="brandname">{BRAND}</span></a><div class="navwrap" id="navwrap"><button type="button" class="menubtn" aria-expanded="false" aria-controls="mainnav"><span aria-hidden="true">☰</span> Menu</button><nav id="mainnav" class="mainnav" aria-label="Main">{nav}</nav><a class="newsbtn" href="https://foothills-kids-outdoors-ovmgv1.subscribepage.io/" data-goatcounter-click="menu-newsletter-signup">✉️ Free newsletter</a></div><script>(function(){{var w=document.getElementById('navwrap'),b=w.querySelector('.menubtn');w.classList.add('js');b.addEventListener('click',function(){{var o=w.classList.toggle('open');b.setAttribute('aria-expanded',o)}})}})()</script></div></header>
 <main>{body}</main>
-<footer>{GRASS}<div class="foot-inner"><p><strong>{BRAND}</strong> &middot; Kids' outdoor adventures around Longview &amp; the Foothills, Alberta</p><p>Follow us on <a href="https://www.facebook.com/profile.php?id=61595326322930" rel="noopener">Facebook</a> and <a href="https://x.com/FoothillsKidsAB" rel="noopener">X</a></p><p><a class="btn btn-small" href="{SIGNUP}">✉️ Weekly newsletter</a></p><p>Directory details come from organizers' public pages and can change. Check with the organizer and official sources before heading out.</p></div></footer>{script}{SHJS if "sharecopy" in body else ""}<script data-goatcounter="https://foothillskids.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>''')
+<footer>{GRASS}<div class="foot-inner"><p class="footlinks"><a href="about.html">About</a> &middot; <a href="sponsors.html">Sponsors</a></p><p class="social"><a href="https://www.facebook.com/FoothillsKidsOutdoors" target="_blank" rel="noopener" aria-label="Foothills Kids Outdoors on Facebook"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/></svg></a><a href="https://x.com/FoothillsKidsAB" target="_blank" rel="noopener" aria-label="Foothills Kids Outdoors on X"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.8 8 10.6h-6.3l-4.9-6.4L5.3 21.4H2.2l7.3-8.3L1.8 3h6.4l4.4 5.9L17.8 3zm-1.1 16.5h1.7L7.4 4.8H5.5l11.2 14.7z"/></svg></a></p><p><strong>{BRAND}</strong> &middot; Kids' outdoor adventures in the foothills, Alberta</p><p>Follow us on <a href="https://www.facebook.com/FoothillsKidsOutdoors/" rel="noopener">Facebook</a> and <a href="https://x.com/FoothillsKidsAB" rel="noopener">X</a></p><p><a class="btn btn-small" href="{SIGNUP}">✉️ Weekly newsletter</a></p><p>Directory details come from organizers' public pages and can change. Check with the organizer and official sources before heading out.</p></div></footer>{script}{SHJS if "sharecopy" in body else ""}<script data-goatcounter="https://foothillskids.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>''')
 import json as _j
 _PH={x["photo"]:x for x in _j.load(open("foothills-activities.json")) if x.get("photo")}
 def _cr(p): x=_PH[p]; return f'<a href="{x["photo_credit_url"]}" rel="noopener">{x["photo_credit"]}</a>'
@@ -72,10 +73,11 @@ TILES=[("trails","🥾 Trails &amp; Hikes","Kid-sized trails and family walks.",
 ("wildlife","🦌 Wildlife &amp; Nature","Nature centres, programs and wildlife spotting.","images/act/cross-programs.jpg"),
 ("winter","❄️ Winter Fun","Skating, skiing, tobogganing and snow play.","images/act/west-bragg-creek.jpg")]
 tiles="".join(f'<a class="card hasphoto tile" href="directory.html?cat={k}#list"><figure class="cardphoto"><img src="{p}" alt="{E(_PH[p]['photo_alt'])}" width="800" height="450" loading="lazy" decoding="async"><figcaption>{_cr(p).replace("<a ","<span data-href=").replace("</a>","</span>")}</figcaption></figure><h3>{t}</h3><p>{d}</p></a>' for k,t,d,p in TILES)
-page("index.html","Home",f'''<section class="hero photohero"><img class="herobg" src="{HERO}" alt="Snowy peaks above a lake in Peter Lougheed Provincial Park, Kananaskis" width="800" height="450" fetchpriority="high" decoding="async"><div class="herotext"><h1 class="herotitle">Foothills Kids <span class="accent">Outdoors</span></h1><p class="herotag">Adventure starts in the Foothills!</p><p class="herosub">Trails, rivers, ranches and wild places for the whole family 🏔️</p><div class="herosignup"><h2 class="signup-title">🗺️ Get a new scavenger hunt every week</h2><p>A fresh themed Foothills hunt for kids of all ages, plus weekend outdoor ideas. One email a week, unsubscribe anytime.</p><a class="btn btn-sun" href="{SIGNUP}">Sign me up, it's free</a></div>
+page("index.html","Home",f'''<section class="hero photohero"><img class="herobg" src="{HERO}" alt="Snowy peaks above a lake in Peter Lougheed Provincial Park, Kananaskis" width="800" height="450" fetchpriority="high" decoding="async"><div class="herotext"><h1 class="herotitle">Foothills Kids <span class="accent">Outdoors</span></h1><p class="herotag">Adventure starts in the Foothills!</p><p class="herosub">Trails, rivers, ranches and wild places for the whole family 🏔️</p>
 <p>From the Highwood River to the edge of Kananaskis, through ranch country from Longview to Okotoks and High River, find family-friendly trails, fishing, horses, wildlife and winter fun for kids of all ages.</p>
 <form class="search herosearch" role="search" action="directory.html" method="get"><label for="hq">🔎 What do you want to do?</label><div class="searchrow"><input type="search" id="hq" name="q" placeholder="Try skating, fishing or Okotoks." required><button type="submit" class="btn qgo">Search</button></div></form>
-<a class="btn" href="directory.html">Explore the Directory</a><a class="btn" href="calendar.html">See the Calendar</a><a class="btn" href="scavenger-hunt.html">Print a Scavenger Hunt</a></div><p class="herocredit">{_cr(HERO)}</p></section>
+<div class="herosignup"><h2 class="signup-title">🗺️ Get a new scavenger hunt every week</h2><p>A fresh themed Foothills hunt for kids of all ages, plus weekend outdoor ideas. One email a week, unsubscribe anytime.</p><a class="btn btn-sun" href="{SIGNUP}">Sign me up, it's free</a></div>
+<a class="btn" href="directory.html">Explore the Directory</a><a class="btn" href="calendar.html">See the Calendar</a><a class="btn" href="scavenger-hunt.html">Print a Scavenger Hunt</a><a class="btn" href="camping-foothills.html">Family Camping</a><a class="btn" href="camping-crown-land.html">Crown Land Camping Guide</a></div><p class="herocredit">{_cr(HERO)}</p></section>
 <section><h2>{ICONS['boot']} Find an adventure</h2><div class="grid tiles">{tiles}</div><p class="tilecredits">Photos via Wikimedia Commons: '''+" &middot; ".join(f'{t.split(" ",1)[1]}: {_cr(p)}' for k,t,d,p in TILES)+f'''</p></section>
 <section><h2>{ICONS['leaf']} Why the Foothills</h2><div class="grid">
 <div class="card"><h3>Mountains meet prairie</h3><p>Rolling hills, big skies and mountain views make every outing feel like an adventure.</p></div>
@@ -164,7 +166,7 @@ def _mblock(m,evs):
 TODAY=_dt.date(2026,10,13); _soon=[f"{(TODAY.year*12+TODAY.month-1+i)//12}-{(TODAY.month-1+i)%12+1:02d}" for i in range(3)]
 soon="".join(_mblock(m,v) for m,v in _months.items() if m in _soon)
 later="".join(_mblock(m,v) for m,v in _months.items() if m>_soon[-1])
-page("calendar.html","Calendar",full="Family Outdoor Events in Okotoks, High River & Black Diamond | Foothills Kids Outdoors",body=f'''<h1>🗓️ Foothills Family Events Calendar</h1>
+page("calendar.html","Calendar",ogimg=BASE+"images/og-halloween.jpg",ogalt="Pumpkin field below wooded hills",ogw=1200,ogh=630,full="Family Outdoor Events in Okotoks, High River & Diamond Valley | Foothills Kids Outdoors",body=f'''<h1>🗓️ Foothills Family Events Calendar</h1>
 <p>Real dated events and seasonal dates for families around Okotoks, High River, Turner Valley, Black Diamond, Longview and Kananaskis, from organizers\' own pages.</p>
 <p class="note"><strong>Dates change.</strong> Events can be cancelled or moved for weather and other reasons, so check with the organizer (use each <em>Details</em> link) before you go.</p>
 <div class="cal"><p class="cal-group" role="heading" aria-level="2">Coming up: next 3 months</p>{soon}<p class="cal-group" role="heading" aria-level="2">Later this season</p>{later}<p id="noev" hidden>No upcoming events listed right now. Check back soon!</p></div>
@@ -196,12 +198,12 @@ page("leaders.html","Leaders",'''<h1>🧭 Groups &amp; Leaders</h1><p>For anyone
 <div class="card"><h2>Plan an outing</h2><p>Use the <a href="directory.html">directory</a> and <a href="calendar.html">calendar</a> to pick an age-appropriate activity.</p></div>
 <div class="card"><h2>Printables</h2><p>Grab the <a href="scavenger-hunt.html">scavenger hunt card</a> for your group.</p></div>
 <div class="card"><h2>Safety checklist</h2><ul><li>Adult-to-kid ratios</li><li>Permission forms</li><li>First-aid kit</li><li>Weather &amp; wildlife check</li></ul></div>
-<div class="card"><h2>Share your group</h2><p>Know a great kids\' outdoor spot or program? Tell us on <a href="https://www.facebook.com/profile.php?id=61595326322930" rel="noopener">Facebook</a>. Always check details with the organizer before an outing.</p></div></div>'''+COMPACT,full="Taking Kids' Groups Outdoors in the Calgary-Area Foothills | Foothills Kids Outdoors")
+<div class="card"><h2>Share your group</h2><p>Know a great kids\' outdoor spot or program? Tell us on <a href="https://www.facebook.com/FoothillsKidsOutdoors/" rel="noopener">Facebook</a>. Always check details with the organizer before an outing.</p></div></div>'''+COMPACT,full="Taking Kids' Groups Outdoors in the Calgary-Area Foothills | Foothills Kids Outdoors")
 page("sponsors.html","Sponsors",'''<h1>🤝 Sponsor the Adventure</h1><p>Help local kids get outside by supporting a free Foothills outdoor guide for families.</p><div class="grid">
 <div class="card"><span class="badge">Tier</span><h2>🌱 Trail Buddy</h2><p>Name on sponsors page.</p></div>
 <div class="card"><span class="badge">Tier</span><h2>🌲 Trail Guide</h2><p>Logo on sponsors page and a printable.</p></div>
 <div class="card"><span class="badge">Tier</span><h2>⛰️ Summit Partner</h2><p>Featured placement on the home page.</p></div></div>
-<p class="note"><strong>Contact us for rates.</strong> Message us on <a href="https://www.facebook.com/profile.php?id=61595326322930" rel="noopener">Facebook</a> to talk about sponsoring.</p>'''+COMPACT,full="Sponsor a Family Outdoor Guide for Longview, Turner Valley & High River | Foothills Kids Outdoors")
+<p class="note"><strong>Contact us for rates.</strong> Message us on <a href="https://www.facebook.com/FoothillsKidsOutdoors/" rel="noopener">Facebook</a> to talk about sponsoring.</p>'''+COMPACT,full="Sponsor a Family Outdoor Guide for Longview, Turner Valley & High River | Foothills Kids Outdoors")
 page("about.html","About",f'''<h1>About {BRAND}</h1><p>{BRAND} is a family-friendly directory of outdoor activities for kids of all ages, from toddlers to teens, around Longview and the Foothills, Alberta, made for parents, grandparents and group leaders.</p>
 <p>Our goal is simple: help families get outside together and make every outing feel like an adventure, whether that's a new trail, a first fish or a scavenger hunt.</p>
 <p class="note">Directory listings link to each organizer\'s public page. Details change, so check with the organizer and official sources for rules, closures and conditions before you go.</p>'''+COMPACT,full="About Foothills Kids Outdoors: Kids' Outdoor Guide for Longview & the Foothills")
@@ -228,7 +230,7 @@ VOL=[
 ]
 page("volunteer.html","Volunteer",f'''<h1>🌿 Volunteer with your kids</h1><p>Giving back outdoors is one of the best family adventures. Around the Alberta foothills, families can plant trees, pick up litter along the river, count winter birds and help care for trails. Kids learn to look after the places they love, and everyone gets fresh air together.</p>
 <p class="note"><strong>Dates change, so always confirm with the organizer.</strong> Ages, dates and sign-up rules come from each organizer's own page and can change from year to year. Use the links on each card to check before you go.</p>
-<div class="grid">'''+"".join(_vol(*v) for v in VOL)+'</div><p>Know a family-friendly volunteer day near you? <a href="mailto:foothillsoutdoor1@gmail.com">Tell us</a>.</p>'+f'<section class="signup compact"><h2 class="signup-title">✉️ Get new volunteer days in your inbox</h2><p>Family volunteer days and outdoor ideas in our weekly email. One email a week, unsubscribe anytime.</p><a class="btn" href="{SIGNUP}">Sign me up</a></section>',full="Volunteer with Your Kids in the Alberta Foothills | Foothills Kids Outdoors",ogimg=BASE+"images/og-volunteer.png",ogalt="Illustration of mountains, green foothills and pine trees under a sunny sky")
+<div class="grid">'''+"".join(_vol(*v) for v in VOL)+'</div><p>Make a weekend of it: pair a volunteer day with a night at one of our <a href="camping-foothills.html">Foothills family campgrounds</a>, or try <a href="camping-crown-land.html">crown land camping with kids</a>.</p><p>Know a family-friendly volunteer day near you? <a href="mailto:foothillsoutdoor1@gmail.com">Tell us</a>.</p>'+f'<section class="signup compact"><h2 class="signup-title">✉️ Get new volunteer days in your inbox</h2><p>Family volunteer days and outdoor ideas in our weekly email. One email a week, unsubscribe anytime.</p><a class="btn" href="{SIGNUP}">Sign me up</a></section>',full="Volunteer with Your Kids in the Alberta Foothills | Foothills Kids Outdoors",ogimg=BASE+"images/og-volunteer.png",ogalt="Illustration of mountains, green foothills and pine trees under a sunny sky")
 
 # Newsletter-only subscriber hunt (not in NAV or sitemap)
 _S=lambda t:re.sub(r"\*\*(.+?)\*\*",r"<strong>\1</strong>",t)
@@ -290,7 +292,48 @@ page("hunt-01-fall-colours.html","Fall Colours Quest",FCCSS+f'''<div class="phun
 <p class="noprint"><button type="button" id="hreset" class="btn">↺ Start over</button> <button type="button" class="btn" onclick="print()">🖨️ Print this hunt</button></p></div><div id="confetti" aria-hidden="true"></div>'''+DONEBOX,FCJS,full="Fall Colours Quest: Subscriber Scavenger Hunt 01 | Foothills Kids Outdoors")
 PAGES.remove("hunt-01-fall-colours.html")
 
-_ORDER=["index.html","directory.html","calendar.html","fishing.html","scavenger-hunt.html","hunt.html","volunteer.html","leaders.html","sponsors.html","about.html"]
+# Newsletter-only subscriber hunt 02 (not in NAV or sitemap). Text: trailhead-ops/hunt-02-first-snow.md (DRAFT)
+FS=["⭐ **Frost or snow** on grass, a fence or a car roof. Is it sparkly or fluffy?",
+"⭐ A **frozen puddle** (look from the edge and tap it with a stick, but don't stand on it!). Do you see bubbles trapped inside?",
+"⭐ Your **breath** making a cloud in the cold air",
+"⭐ A **common raven**: all black and bigger than a crow. Listen for a deep \"croak\"",
+"⭐ A **snowflake** caught on a dark mitten. No snow? Find a seed head with frost on it, or a leaf with a frosty edge",
+"⭐ A **spruce cone** on the ground (long and papery, not hard like a pine cone)",
+"⭐ A **bare tree** with an empty bird nest you can see now that the leaves are gone (look only)",
+"⭐⭐ A **red squirrel midden**: a pile of chewed spruce-cone scales under a spruce tree",
+"⭐⭐ **Bohemian waxwings**: a flock of soft grey-brown birds with a crest, often eating berries in town trees",
+"⭐⭐ **Mule deer vs white-tailed deer**: tail with a black tip = mule deer; a big white \"flag\" tail = white-tail. Which one did you see?",
+"⭐⭐ A **deer bed**: an oval patch of flattened grass or melted snow where a deer rested",
+"⭐⭐ **Snow on one side** of a tree or hill only. Which way does it face? (Hint: the sunny south side melts first.) No snow? Find the side where frost lasts longest",
+"⭐⭐ **Icicles** or ice along a creek edge (look from the bank only)",
+"⭐⭐ **Days are getting shorter**: notice what time it gets dark tonight, then check again in a week. Is it earlier?"]
+assert len(FS)==14
+FSICONS=["❄️","🧊","😮‍💨","🐦‍⬛","🧤","🌲","🪹","🐿️","🐦","🦌","🌾","⛰️","💧","🌇"]
+assert len(FSICONS)==len(FS)
+_fscards="".join(f'<li><button type="button" class="hcard" aria-pressed="false" data-i="{i}"><span class="hi" aria-hidden="true">{FSICONS[i]}</span><span class="ht">{_S(E(x,quote=False))}</span><span class="hc" aria-hidden="true">✓</span></button></li>' for i,x in enumerate(FS))
+FSJS=HJS.replace("fko-hunt-quest-v1","fko-hunt-02-first-snow-v1")
+assert FSJS!=HJS
+page("hunt-02-first-snow.html","First Snow Quest",FCCSS+f'''<div class="phunt"><h1>❄️ First Snow Quest</h1><p class="newsletter-line noprint">✉️ This is this week's subscriber hunt from the {BRAND} newsletter. Thanks for reading!</p><p class="noprint">Tap an item when you spot it. Your progress saves on this phone only. Nothing is uploaded, no account needed. Or print it.</p>
+<p class="fcline">Explorer/team: ____________________ &nbsp;Date: ________ &nbsp;Where: ____________________</p>
+<p class="fcsafe">🧡 <strong>Safety:</strong> It's hunting season in the foothills. Wear bright colours (blaze orange is great) and stay on marked trails. <strong>Never walk on early ice</strong>: AHS recommends at least 15 cm before walking or skating, and river ice is never safe to trust. Dress warm in layers, with a toque and mitts and spare socks. Always stay with an adult. Give deer, birds and all wildlife lots of space (bears are still awake until late November). Never taste berries or snow off plants.</p>
+<p>⭐ = easy (ages 6–8) · ⭐⭐ = harder (ages 10–13). Check the box when you find it!</p>
+<div class="hprog"><div class="hbarwrap" role="progressbar" aria-label="Items found" aria-valuemin="0" aria-valuemax="{len(FS)}" aria-valuenow="0"><div id="hbar" class="hbar"></div></div><p id="htxt" class="htxt" aria-live="polite">0 of {len(FS)} found</p></div>
+<ul class="hlist">{_fscards}</ul>
+<div id="hdone" class="hdone" tabindex="-1" hidden><h2>🎉 You did it!</h2><p>Every item found. Watch your inbox for next week's hunt.</p></div>
+<p class="fcbadge"><strong>Find 10 to earn your First Snow badge!</strong></p>
+<p class="hfoot">❄️ <strong>Leave No Trace:</strong> Take photos and drawings, not cones or nests. <strong>Don't pick or take anything in provincial parks or natural areas.</strong> Stay on trails, and leave the squirrel's winter food where you found it.</p>
+<p>Bonus: draw your best snowflake (or frost pattern) on the back. Real snowflakes have 6 sides!</p>
+<p class="noprint"><button type="button" id="hreset" class="btn">↺ Start over</button> <button type="button" class="btn" onclick="print()">🖨️ Print this hunt</button></p></div><div id="confetti" aria-hidden="true"></div>'''+DONEBOX,FSJS,full="First Snow Quest: Subscriber Scavenger Hunt 02 | Foothills Kids Outdoors")
+PAGES.remove("hunt-02-first-snow.html")
+
+exec(open("camping.py").read())
+exec(open("gardening.py").read())
+_ORDER=["index.html","directory.html","calendar.html","fishing.html","scavenger-hunt.html","hunt.html","volunteer.html","camping-foothills.html","camping-crown-land.html","gardening.html","leaders.html","sponsors.html","about.html"]
 assert sorted(_ORDER)==sorted(PAGES)
 open("sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f'<url><loc>{BASE}{"" if p=="index.html" else p}</loc><lastmod>{_dt.date.today().isoformat()}</lastmod></url>\n' for p in _ORDER)+'</urlset>\n')
 open("robots.txt","w").write(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n")
+
+# Calendar preview photo credit (seasonal pumpkin image)
+_cf=open("calendar.html").read()
+if "Visitor7" not in _cf:
+    open("calendar.html","w").write(_cf.replace("</main>",'<p class="note" style="font-size:.8em">Preview photo: <a href="https://commons.wikimedia.org/wiki/File:Pumpkin_Patch_(Winchester,_Oregon).jpg" rel="noopener">Visitor7</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="noopener">CC BY-SA 3.0</a> (cropped)</p></main>',1))
