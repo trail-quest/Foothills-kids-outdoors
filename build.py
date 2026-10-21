@@ -19,7 +19,7 @@ ICONS = {
  "sun":'<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="#ffb703"/><g stroke="#ffb703" stroke-width="2"><path d="M12 1v4M12 19v4M1 12h4M19 12h4M4 4l3 3M17 17l3 3M4 20l3-3M17 7l3-3"/></g></svg>',
  "tent":'<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 21h20z" fill="#dda15e"/><path d="M12 9l-4 12h8z" fill="#7f5539"/></svg>',
 }
-BASE = "https://trail-quest.github.io/Foothills-kids-outdoors/"
+BASE = "https://foothillskidsoutdoors.ca/"
 DESC = {
  "index.html":"Explore the Alberta Foothills with kids: trails, fishing, ranch life, wildlife and winter fun from Longview to Okotoks, High River and Kananaskis.",
  "directory.html":"Kids' and family outdoor activities in Okotoks, High River, Turner Valley, Bragg Creek and Kananaskis: trails, fishing, ranch life, archery and winter fun.",
@@ -43,7 +43,7 @@ def share(url,title):
     q=_u.quote(url,safe=""); t=_u.quote(title,safe="")
     return (f'<p class="share"><span class="sharelbl">Share:</span> <a href="https://www.facebook.com/sharer/sharer.php?u={q}" target="_blank" rel="noopener">Facebook</a> '
             f'<a href="mailto:?subject={t}&amp;body={q}">Email</a> <button type="button" class="sharecopy" data-url="{url}" data-title="{html.escape(title)}">Copy link</button></p>')
-SHJS = """<script>document.addEventListener('click',async e=>{const b=e.target.closest('.sharecopy');if(!b)return;const url=b.dataset.url,title=b.dataset.title;if(navigator.share){try{await navigator.share({title,url})}catch(err){}return}try{await navigator.clipboard.writeText(url);b.textContent='Copied!'}catch(err){prompt('Copy this link:',url);return}setTimeout(()=>b.textContent='Copy link',1800)})</script>"""
+SHJS = """<script>document.addEventListener('click',async e=>{const b=e.target.closest('.sharecopy');if(!b)return;const d=new URL(b.dataset.url,location.href),url=/^https?:$/.test(location.protocol)?location.origin+d.pathname+d.search+d.hash:b.dataset.url,title=b.dataset.title;if(navigator.share){try{await navigator.share({title,url})}catch(err){}return}try{await navigator.clipboard.writeText(url);b.textContent='Copied!'}catch(err){prompt('Copy this link:',url);return}setTimeout(()=>b.textContent='Copy link',1800)})</script>"""
 NAV = [("index.html","Home"),("directory.html","Directory"),("fishing.html","Fishing"),("camping-foothills.html","Camping"),("gardening.html","Gardening"),("calendar.html","Calendar"),("scavenger-hunt.html","Scavenger Hunt"),("volunteer.html","Volunteer"),("leaders.html","Groups &amp; Leaders")]
 E=html.escape
 PAGES=[]
