@@ -9,15 +9,12 @@
 .bdg-box h2{font-family:"Luckiest Guy",Arial Black,sans-serif;font-weight:400;margin:.2rem 0;font-size:1.8rem;color:var(--forest)}
 .bdg-box img{width:170px;height:auto;animation:bdgpop .6s cubic-bezier(.2,1.6,.4,1)}
 .bdg-close{position:absolute;top:.4rem;right:.5rem;font-size:1.6rem;line-height:1;background:none;border:0;padding:.5rem;cursor:pointer;color:var(--dark)}
-.bdg-cert{background:#fff;border:3px dashed var(--sage);border-radius:16px;padding:.8rem;margin-top:1rem;text-align:left;font-size:.95rem}
-.bdg-cert h3{margin:.1rem 0 .3rem;font-size:1.05rem;color:var(--forest)}
-.bdg-cert input[type=email]{font:inherit;width:100%;box-sizing:border-box;padding:.6rem;border:3px solid var(--forest);border-radius:12px;margin:.3rem 0}
-.bdg-cert .btn{width:100%;box-sizing:border-box;margin:.3rem 0;font:inherit;font-weight:800;cursor:pointer}
-.bdg-cert small{display:block;color:#555;line-height:1.35}
 .bdg-confetti{position:fixed;inset:0;pointer-events:none;z-index:1001;overflow:hidden}
 .bdg-confetti i{position:absolute;top:-12px;width:9px;height:14px;border-radius:2px;animation:bdgfall linear forwards}
 @keyframes bdgfall{to{transform:translateY(105vh) rotate(720deg)}}
 @keyframes bdgpop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
 @media(prefers-reduced-motion:reduce){.bdg-box img{animation:none}.bdg-confetti{display:none}}
 @media print{.bdg-overlay,.bdg-confetti,.hunt-status{display:none!important}}
+.bdg-print{margin:.9rem 0 .2rem;font-weight:800}
+.bdg-print a{color:var(--forest)}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
