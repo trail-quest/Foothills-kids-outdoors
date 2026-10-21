@@ -1,0 +1,23 @@
+.hunt.js-checks li{cursor:pointer;-webkit-tap-highlight-color:transparent;padding:.35rem .5rem;border-radius:12px;user-select:none}
+.hunt.js-checks li[aria-checked=true]{background:var(--mint);text-decoration:line-through;text-decoration-color:var(--olive)}
+.hunt.js-checks li[aria-checked=true]::before{content:"☑ ";color:var(--forest)}
+.hunt-count{font-weight:800;color:var(--forest)}
+.seebadge{display:none}.seebadge.on{display:inline-block}
+.bdg-overlay{position:fixed;inset:0;background:rgba(40,54,24,.7);display:flex;align-items:center;justify-content:center;z-index:1000;padding:1rem;overflow-y:auto}
+.bdg-overlay[hidden]{display:none}
+.bdg-box{background:var(--cream);border:5px solid var(--forest);border-radius:26px;max-width:360px;width:100%;padding:1.2rem 1.1rem;text-align:center;position:relative;box-shadow:0 8px 0 var(--olive);margin:auto}
+.bdg-box h2{font-family:"Luckiest Guy",Arial Black,sans-serif;font-weight:400;margin:.2rem 0;font-size:1.8rem;color:var(--forest)}
+.bdg-box img{width:170px;height:auto;animation:bdgpop .6s cubic-bezier(.2,1.6,.4,1)}
+.bdg-close{position:absolute;top:.4rem;right:.5rem;font-size:1.6rem;line-height:1;background:none;border:0;padding:.5rem;cursor:pointer;color:var(--dark)}
+.bdg-cert{background:#fff;border:3px dashed var(--sage);border-radius:16px;padding:.8rem;margin-top:1rem;text-align:left;font-size:.95rem}
+.bdg-cert h3{margin:.1rem 0 .3rem;font-size:1.05rem;color:var(--forest)}
+.bdg-cert input[type=email]{font:inherit;width:100%;box-sizing:border-box;padding:.6rem;border:3px solid var(--forest);border-radius:12px;margin:.3rem 0}
+.bdg-cert .btn{width:100%;box-sizing:border-box;margin:.3rem 0;font:inherit;font-weight:800;cursor:pointer}
+.bdg-cert small{display:block;color:#555;line-height:1.35}
+.bdg-confetti{position:fixed;inset:0;pointer-events:none;z-index:1001;overflow:hidden}
+.bdg-confetti i{position:absolute;top:-12px;width:9px;height:14px;border-radius:2px;animation:bdgfall linear forwards}
+@keyframes bdgfall{to{transform:translateY(105vh) rotate(720deg)}}
+@keyframes bdgpop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.bdg-box img{animation:none}.bdg-confetti{display:none}}
+@media print{.bdg-overlay,.bdg-confetti,.hunt-status{display:none!important}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
