@@ -1,4 +1,14 @@
-import html,re
+# NOTE (2026-10): the live HTML is the source of truth (it has hand edits not in
+# these templates, and camping.py/gardening.py are missing). build.py now only
+# writes a file when the regenerated output is byte-identical to what's committed;
+# any page that differs is left untouched and listed as SKIPPED at the end.
+# Missing data modules are skipped too. calendar.html is never overwritten.
+import html,re,os,sys
+SKIPPED=[]
+def _write(fn,txt):
+    if os.path.exists(fn) and open(fn).read()!=txt: SKIPPED.append(fn); return
+    if fn=="calendar.html" and os.path.exists(fn): return
+    open(fn,"w").write(txt)
 # Edit BRAND and re-run `python3 build.py` to rename the site everywhere.
 BRAND = "Foothills Kids Outdoors"
 SCENE = """<svg class="scene" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
@@ -21,18 +31,18 @@ ICONS = {
 }
 BASE = "https://foothillskidsoutdoors.ca/"
 DESC = {
- "index.html":"Explore the Alberta Foothills with kids: trails, fishing, ranch life, wildlife and winter fun from Longview to Okotoks, High River and Kananaskis.",
+ "index.html":"Explore the Alberta Foothills with kids: trails, fishing, ranch life, wildlife and winter fun across the foothills, from Okotoks and High River to Kananaskis.",
  "directory.html":"Kids' and family outdoor activities in Okotoks, High River, Turner Valley, Bragg Creek and Kananaskis: trails, fishing, ranch life, archery and winter fun.",
  "fishing.html":"Family fishing spots in the Alberta Foothills and Kananaskis with official 2026 regulations: seasons, limits, bait bans and zones, plus Highwood River rules.",
  "calendar.html":"A month-by-month calendar of real family outdoor events and seasonal dates in the Alberta Foothills, from Okotoks and High River to Kananaskis.",
  "hunt.html":"A free nature scavenger hunt kids can play on a phone on trails around Okotoks, High River, Bragg Creek and Kananaskis. No printer or account needed.",
- "scavenger-hunt.html":"A free printable nature scavenger hunt card for kids of all ages exploring the Foothills and Kananaskis, from Calgary-area towns to Longview.",
+ "scavenger-hunt.html":"A free printable nature scavenger hunt card for kids of all ages exploring the Foothills and Kananaskis, from Calgary-area towns into the foothills.",
  "leaders.html":"Planning tips, printables and a safety checklist for family groups, teachers and club leaders taking kids outdoors around Okotoks, High River and Kananaskis.",
- "sponsors.html":"Sponsor Foothills Kids Outdoors, a free outdoor guide for families in Longview, Turner Valley, Black Diamond, High River and Okotoks. Contact us for rates.",
+ "sponsors.html":"Sponsor Foothills Kids Outdoors, a free outdoor guide for families in Turner Valley, Black Diamond, High River and Okotoks. Contact us for rates.",
  "hunt-01-fall-colours.html":"Fall Colours Quest: a printable fall nature scavenger hunt for kids in the Alberta Foothills, from Foothills Kids Outdoors.",
  "hunt-02-first-snow.html":"First Snow Quest: a printable early-winter nature scavenger hunt for kids in the Alberta foothills, from Foothills Kids Outdoors.",
  "volunteer.html":"Family volunteering in the Alberta Foothills: kid-friendly cleanups, tree planting, bird counts and trail care around Okotoks, High River and Kananaskis.",
- "about.html":"About Foothills Kids Outdoors, a family guide to outdoor adventures for kids of all ages around Longview and the Foothills, south of Calgary.",
+ "about.html":"About Foothills Kids Outdoors, a family guide to outdoor adventures for kids of all ages around the foothills, south of Calgary.",
 }
 SIGNUP = "https://foothills-kids-outdoors-ovmgv1.subscribepage.io/"
 OGIMG = BASE+"images/act/peter-lougheed.jpg"; OGALT = "Snowy peaks above a lake in Peter Lougheed Provincial Park, Kananaskis"
@@ -52,7 +62,7 @@ def page(fn,title,body,script="",full=None,ogimg=None,ogalt=None,ogw=None,ogh=No
     full=full or f"{title} | {BRAND}"; PAGES.append(fn); d=DESC[fn]; url=BASE+("" if fn=="index.html" else fn)
     body=re.sub(r"<h2>(.*?)</h2>",r'<h2><span class="sign">\1</span></h2>',body,flags=re.S)
     nav="".join(f'<a href="{h}"{" aria-current=page" if h==(navcur or fn) else ""}>{t}</a>' for h,t in NAV)
-    open(fn,"w").write(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    _write(fn,f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(full)}</title>
 <meta name="description" content="{d}"><link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="{BRAND}"><meta property="og:title" content="{E(full)}"><meta property="og:description" content="{d}"><meta property="og:url" content="{url}">
@@ -74,7 +84,7 @@ TILES=[("trails","🥾 Trails &amp; Hikes","Kid-sized trails and family walks.",
 ("winter","❄️ Winter Fun","Skating, skiing, tobogganing and snow play.","images/act/west-bragg-creek.jpg")]
 tiles="".join(f'<a class="card hasphoto tile" href="directory.html?cat={k}#list"><figure class="cardphoto"><img src="{p}" alt="{E(_PH[p]['photo_alt'])}" width="800" height="450" loading="lazy" decoding="async"><figcaption>{_cr(p).replace("<a ","<span data-href=").replace("</a>","</span>")}</figcaption></figure><h3>{t}</h3><p>{d}</p></a>' for k,t,d,p in TILES)
 page("index.html","Home",f'''<section class="hero photohero"><img class="herobg" src="{HERO}" alt="Snowy peaks above a lake in Peter Lougheed Provincial Park, Kananaskis" width="800" height="450" fetchpriority="high" decoding="async"><div class="herotext"><h1 class="herotitle">Foothills Kids <span class="accent">Outdoors</span></h1><p class="herotag">Adventure starts in the Foothills!</p><p class="herosub">Trails, rivers, ranches and wild places for the whole family 🏔️</p>
-<p>From the Highwood River to the edge of Kananaskis, through ranch country from Longview to Okotoks and High River, find family-friendly trails, fishing, horses, wildlife and winter fun for kids of all ages.</p>
+<p>From the Highwood River to the edge of Kananaskis, through the ranch country of the foothills around Okotoks and High River, find family-friendly trails, fishing, horses, wildlife and winter fun for kids of all ages.</p>
 <form class="search herosearch" role="search" action="directory.html" method="get"><label for="hq">🔎 What do you want to do?</label><div class="searchrow"><input type="search" id="hq" name="q" placeholder="Try skating, fishing or Okotoks." required><button type="submit" class="btn qgo">Search</button></div></form>
 <div class="herosignup"><h2 class="signup-title">🗺️ Get a new scavenger hunt every week</h2><p>A fresh themed Foothills hunt for kids of all ages, plus weekend outdoor ideas. One email a week, unsubscribe anytime.</p><a class="btn btn-sun" href="{SIGNUP}">Sign me up, it's free</a></div>
 <a class="btn" href="directory.html">Explore the Directory</a><a class="btn" href="calendar.html">See the Calendar</a><a class="btn" href="scavenger-hunt.html">Print a Scavenger Hunt</a><a class="btn" href="camping-foothills.html">Family Camping</a><a class="btn" href="camping-crown-land.html">Crown Land Camping Guide</a></div><p class="herocredit">{_cr(HERO)}</p></section>
@@ -89,7 +99,7 @@ page("index.html","Home",f'''<section class="hero photohero"><img class="herobg"
 <li><strong>Changing weather:</strong> conditions can shift quickly; pack layers, water and rain gear.</li>
 <li><strong>River safety:</strong> water can be cold and fast; supervise kids closely near the bank.</li>
 <li><strong>Tell someone your plan:</strong> share where you are going and when you will be back.</li></ul>
-<p class="note">This is general guidance only. Check official sources (such as Alberta Parks and local advisories) for current conditions, closures and safety information before you go.</p></div>''',full="Kids' Outdoor Adventures near Okotoks, High River & Longview | Foothills Kids Outdoors")
+<p class="note">This is general guidance only. Check official sources (such as Alberta Parks and local advisories) for current conditions, closures and safety information before you go.</p></div>''',full="Kids' Outdoor Adventures near Okotoks, High River & the Foothills | Foothills Kids Outdoors")
 import json,urllib.parse
 CATKEY={"Trails & Hikes":("trails","🥾"),"Fishing":("fishing","🎣"),"Horses & Ranch Life":("horses","🐴"),"Archery":("archery","🏹"),"Wildlife & Nature":("wildlife","🦌"),"Winter Fun":("winter","❄️")}
 E=html.escape
@@ -167,7 +177,7 @@ TODAY=_dt.date(2026,10,13); _soon=[f"{(TODAY.year*12+TODAY.month-1+i)//12}-{(TOD
 soon="".join(_mblock(m,v) for m,v in _months.items() if m in _soon)
 later="".join(_mblock(m,v) for m,v in _months.items() if m>_soon[-1])
 page("calendar.html","Calendar",ogimg=BASE+"images/og-halloween.jpg",ogalt="Pumpkin field below wooded hills",ogw=1200,ogh=630,full="Family Outdoor Events in Okotoks, High River & Diamond Valley | Foothills Kids Outdoors",body=f'''<h1>🗓️ Foothills Family Events Calendar</h1>
-<p>Real dated events and seasonal dates for families around Okotoks, High River, Turner Valley, Black Diamond, Longview and Kananaskis, from organizers\' own pages.</p>
+<p>Real dated events and seasonal dates for families around Okotoks, High River, Turner Valley, Black Diamond and Kananaskis, from organizers\' own pages.</p>
 <p class="note"><strong>Dates change.</strong> Events can be cancelled or moved for weather and other reasons, so check with the organizer (use each <em>Details</em> link) before you go.</p>
 <div class="cal"><p class="cal-group" role="heading" aria-level="2">Coming up: next 3 months</p>{soon}<p class="cal-group" role="heading" aria-level="2">Later this season</p>{later}<p id="noev" hidden>No upcoming events listed right now. Check back soon!</p></div>
 <section class="signup"><h2 class="signup-title">✉️ Get the weekly newsletter</h2><p>Get a new Foothills scavenger hunt every week, plus outdoor ideas for families. One email a week, unsubscribe anytime.</p><a class="btn" href="{SIGNUP}">Sign me up</a></section>''',
@@ -203,10 +213,10 @@ page("sponsors.html","Sponsors",'''<h1>🤝 Sponsor the Adventure</h1><p>Help lo
 <div class="card"><span class="badge">Tier</span><h2>🌱 Trail Buddy</h2><p>Name on sponsors page.</p></div>
 <div class="card"><span class="badge">Tier</span><h2>🌲 Trail Guide</h2><p>Logo on sponsors page and a printable.</p></div>
 <div class="card"><span class="badge">Tier</span><h2>⛰️ Summit Partner</h2><p>Featured placement on the home page.</p></div></div>
-<p class="note"><strong>Contact us for rates.</strong> Message us on <a href="https://www.facebook.com/FoothillsKidsOutdoors/" rel="noopener">Facebook</a> to talk about sponsoring.</p>'''+COMPACT,full="Sponsor a Family Outdoor Guide for Longview, Turner Valley & High River | Foothills Kids Outdoors")
-page("about.html","About",f'''<h1>About {BRAND}</h1><p>{BRAND} is a family-friendly directory of outdoor activities for kids of all ages, from toddlers to teens, around Longview and the Foothills, Alberta, made for parents, grandparents and group leaders.</p>
+<p class="note"><strong>Contact us for rates.</strong> Message us on <a href="https://www.facebook.com/FoothillsKidsOutdoors/" rel="noopener">Facebook</a> to talk about sponsoring.</p>'''+COMPACT,full="Sponsor a Family Outdoor Guide for Turner Valley, High River & the Foothills | Foothills Kids Outdoors")
+page("about.html","About",f'''<h1>About {BRAND}</h1><p>{BRAND} is a family-friendly directory of outdoor activities for kids of all ages, from toddlers to teens, around the Foothills, Alberta, made for parents, grandparents and group leaders.</p>
 <p>Our goal is simple: help families get outside together and make every outing feel like an adventure, whether that's a new trail, a first fish or a scavenger hunt.</p>
-<p class="note">Directory listings link to each organizer\'s public page. Details change, so check with the organizer and official sources for rules, closures and conditions before you go.</p>'''+COMPACT,full="About Foothills Kids Outdoors: Kids' Outdoor Guide for Longview & the Foothills")
+<p class="note">Directory listings link to each organizer\'s public page. Details change, so check with the organizer and official sources for rules, closures and conditions before you go.</p>'''+COMPACT,full="About Foothills Kids Outdoors: Kids' Outdoor Guide for the Alberta Foothills")
 
 VBADGE={"light-up-longview":"Happening now: Sun Oct 18, 2026","millarville-mras":"Happening now: Christmas Market Nov 5-8 &amp; 12-15","alberta-highway-cleanup":"Spring 2027","sheep-river-bird-count":"Coming up: Dec–Jan","high-river-bird-count":"Coming up: Dec–Jan","okotoks-cleanup":"Spring 2027 dates TBA","calgary-pathway-cleanup":"Spring 2027 dates TBA"}
 VYOUNG={"okotoks-litter-free","junior-forest-wardens"}
@@ -218,7 +228,7 @@ VOL=[
 ("light-up-longview","🎄 Light Up Longview","Light Up Longview committee (Village of Longview)","The Light Up Longview committee is setting up the village\'s Christmas lights in the campground and around the village, and invites all villagers to help. A hot lunch is served as a thank-you. Meet at the Longview campground cookhouse.","Families welcome; kids with a parent.","Sunday, October 18, 2026, 10 AM to 2 PM.",[]),
 ("millarville-mras","🐎 Millarville Racing &amp; Agricultural Society volunteers","Millarville Racing &amp; Agricultural Society","Help with setup, admissions, parking, hospitality and vendor help at the Christmas Market, Farmers\' Market, Canada Day Races and the Priddis &amp; Millarville Fair. Free to volunteer, and volunteers get free admission to the society\'s events. Contact the office through the volunteer page.","Volunteers range \"from students to seniors.\" No minimum age given, check with organizer.","Christmas Market Nov 5 to 8 and Nov 12 to 15, 2026. The Summer Market runs Saturdays in summer and the Fair is in August.",[("Millarville volunteer page","https://millarvilleracetrack.com/become-a-volunteer/"),("Christmas Market dates","https://millarvilleracetrack.com/annual-christmas-market/")]),
 ("diamond-valley-volunteer","🏘️ Town of Diamond Valley volunteer interest form","Town of Diamond Valley","Black Diamond and Turner Valley families can fill in a free volunteer interest form for town events (summer and winter), parks and recreation and community groups. The town gets in touch when a good fit comes up.","Check with organizer.","Year-round sign-up.",[("Diamond Valley volunteering page","https://www.diamondvalley.town/201/Volunteering"),("Volunteer interest form","https://www.diamondvalley.town/FormCenter/Volunteering-6/Volunteer-Service-Application-Form-47")]),
-("alberta-highway-cleanup","🛣️ Alberta Highway Cleanup","Alberta Transportation and Economic Corridors (through registered non-profit groups)","A yearly roadside litter pickup on provincial highways, including around Longview, Turner Valley and Black Diamond. Families can\'t sign up on their own; they join through a participating non-profit group, such as Junior Forest Wardens. Everyone must complete safety training first. Groups earn money for their organization.","9 and older. 1 adult for every 2 kids under 14, and 1 adult for every 5 kids aged 14 to 18.","First or second Saturday in May each year (2026 was May 2).",[("Alberta Highway Cleanup page","https://www.alberta.ca/alberta-highway-cleanup-programs")]),
+("alberta-highway-cleanup","🛣️ Alberta Highway Cleanup","Alberta Transportation and Economic Corridors (through registered non-profit groups)","A yearly roadside litter pickup on provincial highways, including around Turner Valley, Black Diamond and the foothills. Families can\'t sign up on their own; they join through a participating non-profit group, such as Junior Forest Wardens. Everyone must complete safety training first. Groups earn money for their organization.","9 and older. 1 adult for every 2 kids under 14, and 1 adult for every 5 kids aged 14 to 18.","First or second Saturday in May each year (2026 was May 2).",[("Alberta Highway Cleanup page","https://www.alberta.ca/alberta-highway-cleanup-programs")]),
 ("okotoks-cleanup","🌱 Okotoks Community Clean Up and Tree Planting","Town of Okotoks (with Parks &amp; Recreation)","A spring cleanup of the Sheep River valley plus tree planting. There's a cleanup BINGO card with prizes and a free volunteer BBQ. Tree planters bring shovels, gloves, closed-toe shoes and eye protection.","Open to individuals and families. No minimum age given, check with organizer.","Every spring. The 2026 event was Saturday, May 9; the 2027 date isn't posted yet.",[("Town of Okotoks event page","https://www.okotoks.ca/your-community/living-okotoks/community-event-calendar/community-clean-and-tree-planting-2026")]),
 ("okotoks-litter-free","🗑️ Okotoks Litter-Free Community cleanup kits","Town of Okotoks","Pick up a free kit (gloves, bags and a rec coupon) and do a family litter pick in a park or along a pathway whenever it suits you. Register your cleanup and the town collects the bags. Stay back from busy roads and never pick up needles or glass.","Check with organizer.","Year-round.",[("Town of Okotoks Litter-Free page","https://www.okotoks.ca/your-community/amenities/parks-pathways-playgrounds/litter-free-community")]),
 ("calgary-pathway-cleanup","🏞️ Calgary Pathway and River Cleanup","City of Calgary (Calgary Parks)","A citywide cleanup of pathways and riverbanks that has run every year since 1967, and was started by a 12-year-old! Registration is required.","12 and older; 12 to 17-year-olds must come with a parent or guardian. Not for kids under 12.","Every year in early May (2026 was May 1 to 3). Registration opens early in the year.",[("City of Calgary registration page","https://www.calgary.ca/volunteer/pathway-river-cleanup-registration.html")]),
@@ -326,14 +336,14 @@ page("hunt-02-first-snow.html","First Snow Quest",FCCSS+f'''<div class="phunt"><
 <p class="noprint"><button type="button" id="hreset" class="btn">↺ Start over</button> <button type="button" class="btn" onclick="print()">🖨️ Print this hunt</button></p></div><div id="confetti" aria-hidden="true"></div>'''+DONEBOX,FSJS,full="First Snow Quest: Subscriber Scavenger Hunt 02 | Foothills Kids Outdoors")
 PAGES.remove("hunt-02-first-snow.html")
 
-exec(open("camping.py").read())
-exec(open("gardening.py").read())
+if os.path.exists("camping.py"): exec(open("camping.py").read())
+else: PAGES.extend(["camping-foothills.html","camping-crown-land.html"]); SKIPPED.append("camping.py missing")
+if os.path.exists("gardening.py"): exec(open("gardening.py").read())
+else: PAGES.extend(["gardening.html"]); SKIPPED.append("gardening.py missing")
 _ORDER=["index.html","directory.html","calendar.html","fishing.html","scavenger-hunt.html","hunt.html","volunteer.html","camping-foothills.html","camping-crown-land.html","gardening.html","leaders.html","sponsors.html","about.html"]
 assert sorted(_ORDER)==sorted(PAGES)
-open("sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f'<url><loc>{BASE}{"" if p=="index.html" else p}</loc><lastmod>{_dt.date.today().isoformat()}</lastmod></url>\n' for p in _ORDER)+'</urlset>\n')
-open("robots.txt","w").write(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n")
+_write("sitemap.xml",'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f'<url><loc>{BASE}{"" if p=="index.html" else p}</loc><lastmod>{_dt.date.today().isoformat()}</lastmod></url>\n' for p in _ORDER)+'</urlset>\n')
+_write("robots.txt",f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n")
 
-# Calendar preview photo credit (seasonal pumpkin image)
-_cf=open("calendar.html").read()
-if "Visitor7" not in _cf:
-    open("calendar.html","w").write(_cf.replace("</main>",'<p class="note" style="font-size:.8em">Preview photo: <a href="https://commons.wikimedia.org/wiki/File:Pumpkin_Patch_(Winchester,_Oregon).jpg" rel="noopener">Visitor7</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="noopener">CC BY-SA 3.0</a> (cropped)</p></main>',1))
+# calendar.html: never rewritten here (hand-maintained; Visitor7 credit already present).
+print("SKIPPED (left untouched):",", ".join(SKIPPED) or "none")
