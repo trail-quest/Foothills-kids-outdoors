@@ -51,15 +51,15 @@
   "map": "Anchor D Guiding & Outfitting, Turner Valley, AB"
  },
  {
-  "name": "Moose Mountain Horseback Adventures: day rides & pack trips",
+  "name": "Moose Mountain Horseback Adventures: year-round trail rides & winter fun",
   "organizer": "Moose Mountain Horseback Adventures",
   "location": "M&M Ranch, near Bragg Creek",
   "category": "Horses & Ranch Life",
-  "ages": "8+; under 16 must ride with an adult; helmets required under 18 (provided free)",
-  "season": "Summer rides May 1 to Oct 31; winter rides Nov 1 to Apr 30",
+  "ages": "Call 403-949-3329 to confirm the youngest rider age; under 16 ride with an adult; helmets provided",
+  "season": "Trail rides year-round; winter snowshoe hikes and ranch-pond skating in season",
   "cost": "1.5-hour winter ride $117.50; 1.5-hour summer ride $120 per person",
-  "description": "Running this winter. Guided rides through foothills forest and meadows, grouped by experience, with pack trips and ranch vacations for older, confident riders. Book a few weeks ahead in summer.",
-  "source": "https://packtrips.ca/trail-rides/trail-rides-and-prices/",
+  "description": "Running this winter. Guided trail rides through foothills forest and meadows all year, plus winter snowshoe hikes and skating on the ranch pond. Reservations required.",
+  "source": "https://packtrips.ca/",
   "via": "research",
   "map": "Moose Mountain Horseback Adventures, Bragg Creek, AB"
  },
@@ -90,19 +90,6 @@
   "map": "Ironstone Farms, Foothills County, AB"
  },
  {
-  "name": "Blue Bronna Wilderness Camp: overnight horse & wilderness camps",
-  "organizer": "Blue Bronna Wilderness Camp",
-  "location": "Willow Creek, in the foothills",
-  "category": "Horses & Ranch Life",
-  "ages": "Kids' camps from age 8; family camps 10+",
-  "season": "Summer overnight camps. See website for 2027 dates and rates.",
-  "cost": "See website for 2027 dates and rates",
-  "description": "A Christian (faith-based) wilderness camp with overnight horse and wilderness programs: riding, horse care, pack trips and archery.",
-  "source": "https://bluebronna.org/",
-  "via": "research",
-  "map": "Blue Bronna Wilderness Camp, Longview, AB"
- },
- {
   "name": "Cowley's Rafter Six Ranch: trail rides, pony rides & lessons",
   "organizer": "Cowley's Rafter Six Ranch",
   "location": "Kananaskis area, near the Kananaskis River",
@@ -116,15 +103,15 @@
   "map": "Cowley's Rafter Six Ranch, Kananaskis, AB"
  },
  {
-  "name": "Boundary Ranch: guided trail rides & pony rides",
+  "name": "Boundary Ranch: winter sleigh rides (trail rides back in 2027)",
   "organizer": "Boundary Ranch",
   "location": "Kananaskis Village area, Kananaskis Valley (Hwy 40)",
   "category": "Horses & Ranch Life",
-  "ages": "Trail rides 6+ (under 18 with an adult); pony rides 5 and under",
-  "season": "Riding May to October (weather dependent)",
-  "cost": "1-hour Buffalo Loop $99 + GST; pony ride $25 + GST (as of Oct 2026)",
-  "description": "Back in 2027 — 2026 season has ended. Walking-pace guided rides for first-timers, with short pony rides around the ranch for little buckaroos. Multi-day pack trips are also offered for confident riders.",
-  "source": "https://www.boundaryranch.com/trail-rides-new/trail-rides/",
+  "ages": "Sleigh rides all ages (kids 3 to 12 $35; 2 and under free); trail rides 6+ in season",
+  "season": "Winter sleigh rides from Dec 5, 2026; trail ride season has ended for 2026",
+  "cost": "Sleigh ride: adults $49, kids 3 to 12 $35, 2 and under free",
+  "description": "Bookings open for winter sleigh rides starting Dec 5, 2026: a 30 to 45 minute horse-drawn ride with hot chocolate and a stop at the buffalo paddock (a wagon may be used if snow is low). The 2026 trail ride season is done; rides return in 2027.",
+  "source": "https://www.boundaryranch.com/trail-rides-new/adventures/winter-sleigh-rides/",
   "via": "research",
   "map": "Boundary Ranch, Kananaskis, AB"
  },
